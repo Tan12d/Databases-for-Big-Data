@@ -1,0 +1,77 @@
+Q1)
+
+b)
+db.Instructor_Teaches.find({})
+db.Course_Prereq_Department.find({})
+
+c)
+db.Instructor_Teaches.find({},{"Name":1,"Dept_name":1})
+
+d)
+db.Instructor_Teaches.find({$where : "this.Dept_name == 'Comp. Sci.'"},{"Name":1,"Salary":1})
+
+db.Instructor_Teaches.find({'Dept_name': 'Comp. Sci.'},{"Name":1,"Salary":1})
+
+e)
+db.Instructor_Teaches.find({'Dept_name': 'Physics' , 'Salary':{'$lt':90000}})
+
+f)
+db.Instructor_Teaches.find({'Dept_name': {'$ne': 'Comp. Sci.'}},{"Name":1,"Dept_name":1})
+
+g)
+db.Instructor_Teaches.distinct("Dept_name")
+
+h){check}
+db.Instructor_Teaches.find({"Teaches":{"$elemMatch":{"Year":2009,"Semester":"Spring"}}},{"Teaches.Course_id":1,"_id":0})
+
+
+----------
+
+db.Instructor_Teaches.aggregate([{"$project":{"Teaches":{"$filter":{"input":"$Teaches","as":"teach","cond":{"$and":[{"$eq":["$$teach.Semester","Spring"]},{"$eq":["$$teach.Year",2009]}]}}}}}])
+
+db.Instructor_Teaches.aggregate([{"$project":{"Teaches":{"$filter":{"input":"$Teaches","as":"teach","cond":{"$and":[{"$eq":["$$teach.Semester","Spring"]},{"$eq":["$$teach.Year",2009]}]}}}}},{"$match":{"Teaches":{"$ne":[]}}}])
+
+db.Faculty_Info.aggregate([{"$project":{"Teaches.Sub_code":{"$filter":{"input":"$Teaches","as":"teach","cond":{"$and":[{"$eq":["$$teach.Semester","Spring"]},{"$eq":["$$teach.Year",2009]}]}}}}},{"$match":{"Teaches":{"$ne":[]}}},{"$project":{"Teaches.Sub_code":1,"_id":0}}])
+
+-------------
+
+i)
+db.Course_Prereq_Department.find({"Dept_name":"Comp. Sci.","Credits":{"$ne":3}},{"Title":1,"_id":0})
+
+j)
+db.Course_Prereq_Department.find({},{"Course_id":1,"Title":1,"Dept_name":1,"Credits":1}).sort({"Dept_name":-1})
+
+k)
+db.Instructor_Teaches.updateMany({},{$set:{"Date_of_Join":null}})
+
+l)
+db.Instructor_Teaches.updateOne({"ID":10101},{"$set":{"Date_of_Join":new Date("1980-10-12")}})
+
+m)
+db.Instructor_Teaches.updateMany({},{"$rename":{"Dept_name":"Department"}},false,true)
+
+db.Course_Prereq_Department.updateMany({},{"$rename":{"Dept_name":"Department"}},false,true)
+
+n)
+db.Course_Prereq_Department.renameCollection("Prerequired")
+
+o)
+db.Course_Prereq_Department.updateMany({},{"$rename":{"Course_id":"Sub_code"}})
+
+
+db.Instructor_Teaches.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year"}}}}}])
+
+p)
+
+
+q)
+db.Instructor_Teaches.renameCollection("Faculty_Info")
+
+r)
+
+
+s)
+db.Prerequired1.updateMany({},{"$unset":{"Prereq_id":1}},false,true)
+
+t)
+db.Prerequired.updateMany({},[{"$set":{"Dept":{"$map":{"input":"$Dept","in":{"Builder":"$$this.Building","Budget":"$$this.Budget"}}}}}])

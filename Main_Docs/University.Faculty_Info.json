@@ -1,0 +1,454 @@
+[{
+  "_id": {
+    "$oid": "65143d5a15f0b19281888df0"
+  },
+  "ID": 10101,
+  "Name": "Srinivasan",
+  "Salary": 65000,
+  "Teaches": [
+    {
+      "Sub_code": "CS-101",
+      "Title": "Intro. to Computer Science",
+      "Department_name": "Comp. Sci.",
+      "Credits": 4,
+      "Prereq_id": "",
+      "Sec_id": 1,
+      "Semester": "Fall",
+      "Year": 2009,
+      "Teaches_Dept": {
+        "Builder": "Taylor",
+        "Budget": 100000
+      }
+    },
+    {
+      "Sub_code": "CS-315",
+      "Title": "Robotics",
+      "Department_name": "Comp. Sci.",
+      "Credits": 3,
+      "Prereq_id": "CS-101",
+      "Sec_id": 1,
+      "Semester": "Spring",
+      "Year": 2010,
+      "Teaches_Dept": {
+        "Builder": "Taylor",
+        "Budget": 100000
+      }
+    },
+    {
+      "Sub_code": "CS-347",
+      "Title": "Database System Concepts",
+      "Department_name": "Comp. Sci.",
+      "Credits": 3,
+      "Prereq_id": "CS-101",
+      "Sec_id": 1,
+      "Semester": "Fall",
+      "Year": 2009,
+      "Teaches_Dept": {
+        "Builder": "Taylor",
+        "Budget": 100000
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": "1980-10-12T00:00:00.000Z"
+  },
+  "Department": "Comp. Sci."
+},
+{
+  "_id": {
+    "$oid": "65143f1b15f0b19281888df1"
+  },
+  "ID": 12121,
+  "Name": "Wu",
+  "Salary": 90000,
+  "Teaches": [
+    {
+      "Sub_code": "FIN-201",
+      "Title": "Investment Banking",
+      "Department_name": "Finance",
+      "Credits": 3,
+      "Prereq_id": "",
+      "Sec_id": 1,
+      "Semester": "Spring",
+      "Year": 2010,
+      "Teaches_Dept": {
+        "Builder": "Painter",
+        "Budget": 120000
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": "1977-08-11T00:00:00.000Z"
+  },
+  "Department": "Finance"
+},
+{
+  "_id": {
+    "$oid": "65143fa315f0b19281888df2"
+  },
+  "ID": 15151,
+  "Name": "Mozart",
+  "Salary": 40000,
+  "Teaches": [
+    {
+      "Sub_code": "MU-199",
+      "Title": "Music Video Production",
+      "Department_name": "Music",
+      "Credits": 3,
+      "Prereq_id": "",
+      "Sec_id": 1,
+      "Semester": "Spring",
+      "Year": 2010,
+      "Teaches_Dept": {
+        "Builder": "Packard",
+        "Budget": 80000
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": {
+      "$numberLong": "-155865600000"
+    }
+  },
+  "Department": "Music"
+},
+{
+  "_id": {
+    "$oid": "651440df15f0b19281888df3"
+  },
+  "ID": 22222,
+  "Name": "Einstein",
+  "Salary": 95000,
+  "Teaches": [
+    {
+      "Sub_code": "PHY-101",
+      "Title": "Physical Principles",
+      "Department_name": "Physics",
+      "Credits": 4,
+      "Prereq_id": "",
+      "Sec_id": 1,
+      "Semester": "Fall",
+      "Year": 2009,
+      "Teaches_Dept": {
+        "Builder": "Watson",
+        "Budget": 70000
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": "1998-05-02T00:00:00.000Z"
+  },
+  "Department": "Physics"
+},
+{
+  "_id": {
+    "$oid": "6514424115f0b19281888df4"
+  },
+  "ID": 32343,
+  "Name": "El Said",
+  "Salary": 60000,
+  "Teaches": [
+    {
+      "Sub_code": "HIS-351",
+      "Title": "World History",
+      "Department_name": "History",
+      "Credits": 3,
+      "Prereq_id": "",
+      "Sec_id": 1,
+      "Semester": "Spring",
+      "Year": 2010,
+      "Teaches_Dept": {
+        "Builder": "Painter",
+        "Budget": 50000
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": "1987-04-19T00:00:00.000Z"
+  },
+  "Department": "History"
+},
+{
+  "_id": {
+    "$oid": "651442ba15f0b19281888df5"
+  },
+  "ID": 33456,
+  "Name": "Gold",
+  "Salary": 87000,
+  "Teaches": [
+    {
+      "Sub_code": "",
+      "Title": "",
+      "Department_name": "",
+      "Credits": null,
+      "Prereq_id": "",
+      "Sec_id": null,
+      "Semester": "",
+      "Year": null,
+      "Teaches_Dept": {
+        "Builder": "",
+        "Budget": null
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": "1992-09-21T00:00:00.000Z"
+  },
+  "Department": "Physics"
+},
+{
+  "_id": {
+    "$oid": "651443a615f0b19281888df6"
+  },
+  "ID": 45565,
+  "Name": "Katz",
+  "Salary": 75000,
+  "Teaches": [
+    {
+      "Sub_code": "CS-101",
+      "Title": "Intro. to Computer Science",
+      "Department_name": "Comp. Sci.",
+      "Credits": 4,
+      "Prereq_id": "",
+      "Sec_id": 1,
+      "Semester": "Spring",
+      "Year": 2010,
+      "Teaches_Dept": {
+        "Builder": "Taylor",
+        "Budget": 100000
+      }
+    },
+    {
+      "Sub_code": "CS-319",
+      "Title": "Image Processing",
+      "Department_name": "Comp. Sci.",
+      "Credits": 3,
+      "Prereq_id": "CS-101",
+      "Sec_id": 1,
+      "Semester": "Spring",
+      "Year": 2010,
+      "Teaches_Dept": {
+        "Builder": "Taylor",
+        "Budget": 100000
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": {
+      "$numberLong": "-498528000000"
+    }
+  },
+  "Department": "Comp. Sci."
+},
+{
+  "_id": {
+    "$oid": "6514441615f0b19281888df7"
+  },
+  "ID": 58583,
+  "Name": "Califieri",
+  "Salary": 62000,
+  "Teaches": [
+    {
+      "Sub_code": "",
+      "Title": "",
+      "Department_name": "",
+      "Credits": null,
+      "Prereq_id": "",
+      "Sec_id": null,
+      "Semester": "",
+      "Year": null,
+      "Teaches_Dept": {
+        "Builder": "",
+        "Budget": null
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": "1970-11-29T00:00:00.000Z"
+  },
+  "Department": "History"
+},
+{
+  "_id": {
+    "$oid": "6514445b15f0b19281888df8"
+  },
+  "ID": 76543,
+  "Name": "Singh",
+  "Salary": 80000,
+  "Teaches": [
+    {
+      "Sub_code": "",
+      "Title": "",
+      "Department_name": "",
+      "Credits": null,
+      "Prereq_id": "",
+      "Sec_id": null,
+      "Semester": "",
+      "Year": null,
+      "Teaches_Dept": {
+        "Builder": "",
+        "Budget": null
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": "1983-12-26T00:00:00.000Z"
+  },
+  "Department": "Finance"
+},
+{
+  "_id": {
+    "$oid": "6514453915f0b19281888df9"
+  },
+  "ID": 76766,
+  "Name": "Crick",
+  "Salary": 72000,
+  "Teaches": [
+    {
+      "Sub_code": "BIO-101",
+      "Title": "Intro. to Biology",
+      "Department_name": "Biology",
+      "Credits": 4,
+      "Prereq_id": "",
+      "Sec_id": 1,
+      "Semester": "Summer",
+      "Year": 2009,
+      "Teaches_Dept": {
+        "Builder": "Watson",
+        "Budget": 90000
+      }
+    },
+    {
+      "Sub_code": "BIO-301",
+      "Title": "Genetics",
+      "Department_name": "Biology",
+      "Credits": 4,
+      "Prereq_id": "BIO-101",
+      "Sec_id": 1,
+      "Semester": "Summer",
+      "Year": 2010,
+      "Teaches_Dept": {
+        "Builder": "Watson",
+        "Budget": 90000
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": {
+      "$numberLong": "-270432000000"
+    }
+  },
+  "Department": "Biology"
+},
+{
+  "_id": {
+    "$oid": "6514461a15f0b19281888dfa"
+  },
+  "ID": 83821,
+  "Name": "Brandt",
+  "Salary": 92000,
+  "Teaches": [
+    {
+      "Sub_code": "CS-190",
+      "Title": "Game Design",
+      "Department_name": "Comp. Sci.",
+      "Credits": 4,
+      "Prereq_id": "CS-101",
+      "Sec_id": 1,
+      "Semester": "Spring",
+      "Year": 2009,
+      "Teaches_Dept": {
+        "Builder": "Taylor",
+        "Budget": 100000
+      }
+    },
+    {
+      "Sub_code": "CS-190",
+      "Title": "Game Design",
+      "Department_name": "Comp. Sci.",
+      "Credits": 4,
+      "Prereq_id": "CS-101",
+      "Sec_id": 2,
+      "Semester": "Spring",
+      "Year": 2009,
+      "Teaches_Dept": {
+        "Builder": "Taylor",
+        "Budget": 100000
+      }
+    },
+    {
+      "Sub_code": "CS-319",
+      "Title": "Image Processing",
+      "Department_name": "Comp. Sci.",
+      "Credits": 3,
+      "Prereq_id": "CS-101",
+      "Sec_id": 2,
+      "Semester": "Spring",
+      "Year": 2010,
+      "Teaches_Dept": {
+        "Builder": "Taylor",
+        "Budget": 100000
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": {
+      "$numberLong": "-22809600000"
+    }
+  },
+  "Department": "Comp. Sci."
+},
+{
+  "_id": {
+    "$oid": "6514469d15f0b19281888dfb"
+  },
+  "ID": 98345,
+  "Name": "Kim",
+  "Salary": 80000,
+  "Teaches": [
+    {
+      "Sub_code": "EE-181",
+      "Title": "Intro. to Digital Systems",
+      "Department_name": "Elec. Eng.",
+      "Credits": 3,
+      "Prereq_id": "PHY-101",
+      "Sec_id": 1,
+      "Semester": "Spring",
+      "Year": 2009,
+      "Teaches_Dept": {
+        "Builder": "Taylor",
+        "Budget": 85000
+      }
+    }
+  ],
+  "Date_of_Join": {
+    "$date": "1973-09-21T00:00:00.000Z"
+  },
+  "Department": "Elec. Eng."
+},
+{
+  "_id": {
+    "$oid": "651446f915f0b19281888dfc"
+  },
+  "ID": null,
+  "Name": "",
+  "Salary": null,
+  "Teaches": [
+    {
+      "Sub_code": "BIO-399",
+      "Title": "Computational Biology",
+      "Department_name": "Biology",
+      "Credits": 3,
+      "Prereq_id": "BIO-101",
+      "Sec_id": null,
+      "Semester": "",
+      "Year": null,
+      "Teaches_Dept": {
+        "Builder": "Watson",
+        "Budget": 90000
+      }
+    }
+  ],
+  "Date_of_Join": null,
+  "Department": ""
+}]

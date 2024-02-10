@@ -1,0 +1,3770 @@
+test> use University
+switched to db University
+University> db.createCollection("TEACHER")
+{ ok: 1 }
+University> db.TEACHER.insertOne({"ID":10101,"Name":"Srinivasan","Dept_name":"Comp. Sci.","Salary":65000,"Teaches":[{"Course_id":"CS-101","Title":"Intro. to Computer Science","Department_name":"Comp. Sci.","Credits":4,"Prereq_id":"","Sec_id":1,"Semester":"Fall","Year":2009,"Teaches_Dept":{"Building":"Taylor","Budget":100000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("65143c4415f0b19281888def")
+}
+University> db.TEACHER.deleteOne({"ID":10101})
+{ acknowledged: true, deletedCount: 1 }
+University> db.TEACHER.insertOne({"ID":10101,"Name":"Srinivasan","Dept_name":"Comp. Sci.","Salary":65000,"Teaches":[{"Course_id":"CS-101","Title":"Intro. to Computer Science","Department_name":"Comp. Sci.","Credits":4,"Prereq_id":"","Sec_id":1,"Semester":"Fall","Year":2009,"Teaches_Dept":{"Building":"Taylor","Budget":100000}},{"Course_id":"CS-315","Title":"Robotics","Department_name":"Comp. Sci.","Credits":3,"Prereq_id":"CS-101","Sec_id":1,"Semester":"Spring","Year":2010,"Teaches_Dept":{"Building":"Taylor","Budget":100000}},{"Course_id":"CS-347","Title":"Database System Concepts","Department_name":"Comp. Sci.","Credits":3,"Prereq_id":"CS-101","Sec_id":1,"Semester":"Fall","Year":2009,"Teaches_Dept":{"Building":"Taylor","Budget":100000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("65143d5a15f0b19281888df0")
+}
+University> db.TEACHER.insertOne({"ID":12121,"Name":"Wu","Dept_name":"Finance","Salary":90000,"Teaches":[{"Course_id":"FIN-201","Title":"Investment Banking","Department_name":"Finance","Credits":3,"Prereq_id":"","Sec_id":1,"Semester":"Spring","Year":2010,"Teaches_Dept":{"Building":"Painter","Budget":120000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("65143f1b15f0b19281888df1")
+}
+University> db.TEACHER.insertOne({"ID":15151,"Name":"Mozart","Dept_name":"Music","Salary":40000,"Teaches":[{"Course_id":"MU-199","Title":"Music Video Production","Department_name":"Music","Credits":3,"Prereq_id":"","Sec_id":1,"Semester":"Spring","Year":2010,"Teaches_Dept":{"Building":"Packard","Budget":80000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("65143fa315f0b19281888df2")
+}
+University> db.TEACHER.insertOne({"ID":22222,"Name":"Einstein","Dept_name":"Physics","Salary":95000,"Teaches":[{"Course_id":"PHY-101","Title":"Physical Principles","Department_name":"Physics","Credits":4,"Prereq_id":"","Sec_id":1,"Semester":"Fall","Year":2009,"Teaches_Dept":{"Building":"Watson","Budget":70000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("651440df15f0b19281888df3")
+}
+University> db.TEACHER.insertOne({"ID":32343,"Name":"El Said","Dept_name":"History","Salary":60000,"Teaches":[{"Course_id":"HIS-351","Title":"World History","Department_name":"History","Credits":3,"Prereq_id":"","Sec_id":1,"Semester":"Spring","Year":2010,"Teaches_Dept":{"Building":"Painter","Budget":50000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514424115f0b19281888df4")
+}
+University> db.TEACHER.insertOne({"ID":33456,"Name":"Gold","Dept_name":"Physics","Salary":87000,"Teaches":[{"Course_id":"","Title":"","Department_name":"","Credits":null,"Prereq_id":"","Sec_id":null,"Semester":"","Year":null,"Teaches_Dept":{"Building":"","Budget":nunull}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("651442ba15f0b19281888df5")
+}
+University> db.TEACHER.insertOne({"ID":45565,"Name":"Katz","Dept_name":"Comp. Sci.","Salary":75000,"Teaches":[{"Course_id":"CS-101","Title":"Intro. to Computer Science","Department_name":"Comp. Sci.","Credits":4,"Prereq_id":"","Sec_id":1,"Semester":"Spring","Year":2010,"Teaches_Dept":{"Building":"Taylor","Budget":100000}},{"Course_id":"CS-319","Title":"Image Processing","Department_name":"Comp. Sci.","Credits":3,"Prereq_id":"CS-101","Sec_id":1,"Semester":"Spring","Year":2010,"Teaches_Dept":{"Building":"Taylor","Budget":100000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("651443a615f0b19281888df6")
+}
+University> db.TEACHER.insertOne({"ID":58583,"Name":"Califieri","Dept_name":"History","Salary":62000,"Teaches":[{"Course_id":"","Title":"","Department_name":"","Credits":null,"Prereq_id":"","Sec_id":null,"Semester":"","Year":null,"Teaches_Dept":{"Building":"","Budget":null}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514441615f0b19281888df7")
+}
+University> db.TEACHER.insertOne({"ID":76543,"Name":"Singh","Dept_name":"Finance","Salary":80000,"Teaches":[{"Course_id":"","Title":"","Department_name":"","Credits":null,"Prereq_id":"","Sec_id":null,"Semester":"","Year":null,"Teaches_Dept":{"Building":"","Budget":nnull}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514445b15f0b19281888df8")
+}
+University> db.TEACHER.insertOne({"ID":76766,"Name":"Crick","Dept_name":"Biology","Salary":72000,"Teaches":[{"Course_id":"BIO-101","Title":"Intro. to Biology","Department_name":"Biology","Credits":4,"Prereq_id":"","Sec_id":1,"Semester":"Summer","Year":2009,"Teaches_Dept":{"Building":"Watson","Budget":90000}},{"Course_id":"BIO-301","Title":"Genetics","Department_name":"Biology","Credits":4,"Prereq_id":"BIO-101","Sec_id":1,"Semester":"Summer","Year":2010,"Teaches_Dept":{"Building":"Watson","Budget":90000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514453915f0b19281888df9")
+}
+University> db.TEACHER.insertOne({"ID":83821,"Name":"Brandt","Dept_name":"Comp. Sci.","Salary":92000,"Teaches":[{"Course_id":"CS-190","Title":"Game Design","Department_name":"Comp. Sci.","Credits":4,"Prereq_id":"CS-101","Sec_id":1,"Semester":"Spring","Year":2009,"Teaches_Dept":{"Building":"Taylor","Budget":100000}},{"Course_id":"CS-190","Title":"Game Design","Department_name":"Comp. Sci.","Credits":4,"Prereq_id":"CS-101","Sec_id":2,"Semester":"Spring","Year":2009,"Teaches_Dept":{"Building":"Taylor","Budget":100000}},{"Course_id":"CS-319","Title":"Image Processing","Department_name":"Comp. Sci.","Credits":3,"Prereq_id":"CS-101","Sec_id":2,"Semester":"Spring","Year":2010,"Teaches_Dept":{"Building":"Taylor","Budget":100000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514461a15f0b19281888dfa")
+}
+University> db.TEACHER.insertOne({"ID":98345,"Name":"Kim","Dept_name":"Elec. Eng.","Salary":80000,"Teaches":[{"Course_id":"EE-181","Title":"Intro. to Digital Systems","Department_name":"Elec. Eng.","Credits":3,"Prereq_id":"PHY-101","Sec_id":1,"Semester":"Spring","Year":2009,"Teaches_Dept":{"Building":"Taylor","Budget":85000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514469d15f0b19281888dfb")
+}
+University> db.TEACHER.insertOne({"ID":null,"Name":"","Dept_name":"","Salary":null,"Teaches":[{"Course_id":"BIO-399","Title":"Computational Biology","Department_name":"Biology","Credits":3,"Prereq_id":"BIO-101","Sec_id":null,"Semester":"","Year":null,"Teaches_Dept":{"Building":"Watson","Budget":90000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("651446f915f0b19281888dfc")
+}
+University> db.TEACHER.insertOne({"ID":null,"Name":"","Dept_name":"","Salary":null,"Teaches":[{"Course_id":"BIO-399","Title":"Computational Biology","Department_name":"Biology","Credits":3,"Prereq_id":"BIO-101","Sec_id":null,"Semester":"","Year":null,"Teaches_Dept":{"Building":"Wat
+Uncaught:
+SyntaxError: Unterminated string constant. (1:266)
+
+> 1 | db.TEACHER.insertOne({"ID":null,"Name":"","Dept_name":"","Salary":null,"Teaches":[{"Course_id":"BIO-399","Title":"Computational Biology","Department_name":"Biology","Credits":3,"Prereq_id":"BIO-101","Sec_id":null,"Semester":"","Year":null,"Teaches_Dept":{"Building":"Wat
+    |
+
+      ^
+  2 |
+
+University> db.TEACHER.insertOne({"ID":null,"Name":"","Dept_name":"","Salary":null,"Teaches":[{"Course_id":"BIO-399","Title":"Computational Biology","Department_name":"Biology","Credits":3,"Prereq_id":"BIO-101","Sec_id":null,"Semester":"","Year":null,"Teaches_Dept":{"Building":"Watson","Budget":90000}}]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("65145f6715f0b19281888dfd")
+}
+University> db.TEACHER.find({})
+[
+  {
+    _id: ObjectId("65143d5a15f0b19281888df0"),
+    ID: 10101,
+    Name: 'Srinivasan',
+    Dept_name: 'Comp. Sci.',
+    Salary: 65000,
+    Teaches: [
+      {
+        Course_id: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      },
+      {
+        Course_id: 'CS-315',
+        Title: 'Robotics',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      },
+      {
+        Course_id: 'CS-347',
+        Title: 'Database System Concepts',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("65143f1b15f0b19281888df1"),
+    ID: 12121,
+    Name: 'Wu',
+    Dept_name: 'Finance',
+    Salary: 90000,
+    Teaches: [
+      {
+        Course_id: 'FIN-201',
+        Title: 'Investment Banking',
+        Department_name: 'Finance',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Painter', Budget: 120000 }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("65143fa315f0b19281888df2"),
+    ID: 15151,
+    Name: 'Mozart',
+    Dept_name: 'Music',
+    Salary: 40000,
+    Teaches: [
+      {
+        Course_id: 'MU-199',
+        Title: 'Music Video Production',
+        Department_name: 'Music',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Packard', Budget: 80000 }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("651440df15f0b19281888df3"),
+    ID: 22222,
+    Name: 'Einstein',
+    Dept_name: 'Physics',
+    Salary: 95000,
+    Teaches: [
+      {
+        Course_id: 'PHY-101',
+        Title: 'Physical Principles',
+        Department_name: 'Physics',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Watson', Budget: 70000 }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("6514424115f0b19281888df4"),
+    ID: 32343,
+    Name: 'El Said',
+    Dept_name: 'History',
+    Salary: 60000,
+    Teaches: [
+      {
+        Course_id: 'HIS-351',
+        Title: 'World History',
+        Department_name: 'History',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Painter', Budget: 50000 }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("651442ba15f0b19281888df5"),
+    ID: 33456,
+    Name: 'Gold',
+    Dept_name: 'Physics',
+    Salary: 87000,
+    Teaches: [
+      {
+        Course_id: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Building: '', Budget: null }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("651443a615f0b19281888df6"),
+    ID: 45565,
+    Name: 'Katz',
+    Dept_name: 'Comp. Sci.',
+    Salary: 75000,
+    Teaches: [
+      {
+        Course_id: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      },
+      {
+        Course_id: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("6514441615f0b19281888df7"),
+    ID: 58583,
+    Name: 'Califieri',
+    Dept_name: 'History',
+    Salary: 62000,
+    Teaches: [
+      {
+        Course_id: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Building: '', Budget: null }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("6514445b15f0b19281888df8"),
+    ID: 76543,
+    Name: 'Singh',
+    Dept_name: 'Finance',
+    Salary: 80000,
+    Teaches: [
+      {
+        Course_id: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Building: '', Budget: null }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("6514453915f0b19281888df9"),
+    ID: 76766,
+    Name: 'Crick',
+    Dept_name: 'Biology',
+    Salary: 72000,
+    Teaches: [
+      {
+        Course_id: 'BIO-101',
+        Title: 'Intro. to Biology',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Watson', Budget: 90000 }
+      },
+      {
+        Course_id: 'BIO-301',
+        Title: 'Genetics',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: 'BIO-101',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Watson', Budget: 90000 }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("6514461a15f0b19281888dfa"),
+    ID: 83821,
+    Name: 'Brandt',
+    Dept_name: 'Comp. Sci.',
+    Salary: 92000,
+    Teaches: [
+      {
+        Course_id: 'CS-190',
+        Title: 'Game Design',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      },
+      {
+        Course_id: 'CS-190',
+        Title: 'Game Design',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: 'CS-101',
+        Sec_id: 2,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      },
+      {
+        Course_id: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 2,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("6514469d15f0b19281888dfb"),
+    ID: 98345,
+    Name: 'Kim',
+    Dept_name: 'Elec. Eng.',
+    Salary: 80000,
+    Teaches: [
+      {
+        Course_id: 'EE-181',
+        Title: 'Intro. to Digital Systems',
+        Department_name: 'Elec. Eng.',
+        Credits: 3,
+        Prereq_id: 'PHY-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Taylor', Budget: 85000 }
+      }
+    ]
+  },
+  {
+    _id: ObjectId("651446f915f0b19281888dfc"),
+    ID: null,
+    Name: '',
+    Dept_name: '',
+    Salary: null,
+    Teaches: [
+      {
+        Course_id: 'BIO-399',
+        Title: 'Computational Biology',
+        Department_name: 'Biology',
+        Credits: 3,
+        Prereq_id: 'BIO-101',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Building: 'Watson', Budget: 90000 }
+      }
+    ]
+  }
+]
+University> db.TEACHER.find({},{"Name":1,"Dept_name":1,"_id":0})
+[
+  { Name: 'Srinivasan', Dept_name: 'Comp. Sci.' },
+  { Name: 'Wu', Dept_name: 'Finance' },
+  { Name: 'Mozart', Dept_name: 'Music' },
+  { Name: 'Einstein', Dept_name: 'Physics' },
+  { Name: 'El Said', Dept_name: 'History' },
+  { Name: 'Gold', Dept_name: 'Physics' },
+  { Name: 'Katz', Dept_name: 'Comp. Sci.' },
+  { Name: 'Califieri', Dept_name: 'History' },
+  { Name: 'Singh', Dept_name: 'Finance' },
+  { Name: 'Crick', Dept_name: 'Biology' },
+  { Name: 'Brandt', Dept_name: 'Comp. Sci.' },
+  { Name: 'Kim', Dept_name: 'Elec. Eng.' },
+  { Name: '', Dept_name: '' }
+]
+University> db.TEACHER.find({"Name":{"$ne":""}},{"Name":1,"Dept_name":1,"_id":0})
+[
+  { Name: 'Srinivasan', Dept_name: 'Comp. Sci.' },
+  { Name: 'Wu', Dept_name: 'Finance' },
+  { Name: 'Mozart', Dept_name: 'Music' },
+  { Name: 'Einstein', Dept_name: 'Physics' },
+  { Name: 'El Said', Dept_name: 'History' },
+  { Name: 'Gold', Dept_name: 'Physics' },
+  { Name: 'Katz', Dept_name: 'Comp. Sci.' },
+  { Name: 'Califieri', Dept_name: 'History' },
+  { Name: 'Singh', Dept_name: 'Finance' },
+  { Name: 'Crick', Dept_name: 'Biology' },
+  { Name: 'Brandt', Dept_name: 'Comp. Sci.' },
+  { Name: 'Kim', Dept_name: 'Elec. Eng.' }
+]
+University> db.TEACHER.find({"Dept_name":{"$eq":"Comp. Sci."}},{"Name":1,"Salary":1,"_id":0})
+[
+  { Name: 'Srinivasan', Salary: 65000 },
+  { Name: 'Katz', Salary: 75000 },
+  { Name: 'Brandt', Salary: 92000 }
+]
+University> db.TEACHER.find({"Dept_name":{"$eq":"Physics"},"Salary":{"$lt":90000}},{"_id":0})
+[
+  {
+    ID: 33456,
+    Name: 'Gold',
+    Dept_name: 'Physics',
+    Salary: 87000,
+    Teaches: [
+      {
+        Course_id: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Building: '', Budget: null }
+      }
+    ]
+  }
+]
+University> db.TEACHER.find({"Dept_name":{"$ne":"Comp. Sci."}},{"Name":1,"Dept_name":1,"_id":0})
+[
+  { Name: 'Wu', Dept_name: 'Finance' },
+  { Name: 'Mozart', Dept_name: 'Music' },
+  { Name: 'Einstein', Dept_name: 'Physics' },
+  { Name: 'El Said', Dept_name: 'History' },
+  { Name: 'Gold', Dept_name: 'Physics' },
+  { Name: 'Califieri', Dept_name: 'History' },
+  { Name: 'Singh', Dept_name: 'Finance' },
+  { Name: 'Crick', Dept_name: 'Biology' },
+  { Name: 'Kim', Dept_name: 'Elec. Eng.' },
+  { Name: '', Dept_name: '' }
+]
+University> db.TEACHER.find({"Dept_name":{"$nin":["Comp. Sci.",""]}},{"Name":1,"Dept_name":1,"_id":0})
+[
+  { Name: 'Wu', Dept_name: 'Finance' },
+  { Name: 'Mozart', Dept_name: 'Music' },
+  { Name: 'Einstein', Dept_name: 'Physics' },
+  { Name: 'El Said', Dept_name: 'History' },
+  { Name: 'Gold', Dept_name: 'Physics' },
+  { Name: 'Califieri', Dept_name: 'History' },
+  { Name: 'Singh', Dept_name: 'Finance' },
+  { Name: 'Crick', Dept_name: 'Biology' },
+  { Name: 'Kim', Dept_name: 'Elec. Eng.' }
+]
+University> db.TEACHER.distinct("Dept_name",{"Dept_name":{"$ne":""}})
+[
+  'Biology',
+  'Comp. Sci.',
+  'Elec. Eng.',
+  'Finance',
+  'History',
+  'Music',
+  'Physics'
+]
+University> db.TEACHER.aggregate([{"$project":{"Teaches":{"$filter":{"input":"$Teaches","as":"teach","cond":{"$and":[{"$eq":["$$teach.Semester","Spring"]},{"$eq":["$$teach.Year",2009]}]}}}}},{"$match":{"Teaches":{"$ne":[]}}},{"$project":{"Teaches.Course_id":1,"_id":0}}])
+[
+  { Teaches: [ { Course_id: 'CS-190' }, { Course_id: 'CS-190' } ] },
+  { Teaches: [ { Course_id: 'EE-181' } ] }
+]
+University> db.TEACHER.aggregate([{"$match":{"Department_name":"Comp. Sci."}},{"$project":{"Teaches":{"$filter":{"input":"$Teaches","as":"teach","cond":{"$ne":["$$teach.Credits",3]}}}}},{"$match":{"Teaches":{"$ne":[]}}},{"$project":{"Teaches.Title":1,"_id":0}}])
+
+University> db.TEACHER.aggregate([{"$match":{"Department_name":"Comp. Sci."}},{"$project":{"Teaches":{"$filter":{"input":"$Teaches","as":"teach","cond":{"$ne":["$$teach.Credits",3]}}}}},{"$match":{"Teaches":{"$ne":[]}}},{"$project":{"Teaches0}}])
+Uncaught:
+SyntaxError: Unterminated string constant. (1:221)
+
+> 1 | db.TEACHER.aggregate([{"$match":{"Department_name":"Comp. Sci."}},{"$project":{"Teaches":{"$filter":{"input":"$Teaches","as":"teach","cond":{"$ne":["$$teach.Credits",3]}}}}},{"$match":{"Teaches":{"$ne":[]}}},{"$project":{"Teaches0}}])
+    |
+                                                                                              ^
+  2 |
+
+University> db.TEACHER.aggregate([{"$match":{"Teaches.Department_name":"Comp. Sci."}},{"$project":{"Teaches":{"$filter":{"input":"$Teaches","as":"teach","cond":{"$ne":["$$teach.Credits",3]}}}}},{"$match":{"Teaches":{"$ne":[]}}},{"$project":{"Teaches.Title":1,"_id":0}}])
+[
+  { Teaches: [ { Title: 'Intro. to Computer Science' } ] },
+  { Teaches: [ { Title: 'Intro. to Computer Science' } ] },
+  { Teaches: [ { Title: 'Game Design' }, { Title: 'Game Design' } ] }
+]
+University> db.TEACHER.find({},{"Teaches.Course_id":1,"Teaches.Title":1,"Teaches.Department_name":1,"Teaches.Credits":1,"_id":0}).sort({"Teahes.Department_name":-1})
+[
+  {
+    Teaches: [
+      {
+        Course_id: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4
+      },
+      {
+        Course_id: 'CS-315',
+        Title: 'Robotics',
+        Department_name: 'Comp. Sci.',
+        Credits: 3
+      },
+      {
+        Course_id: 'CS-347',
+        Title: 'Database System Concepts',
+        Department_name: 'Comp. Sci.',
+        Credits: 3
+      }
+    ]
+  },
+  {
+    Teaches: [
+      {
+        Course_id: 'FIN-201',
+        Title: 'Investment Banking',
+        Department_name: 'Finance',
+        Credits: 3
+      }
+    ]
+  },
+  {
+    Teaches: [
+      {
+        Course_id: 'MU-199',
+        Title: 'Music Video Production',
+        Department_name: 'Music',
+        Credits: 3
+      }
+    ]
+  },
+  {
+    Teaches: [
+      {
+        Course_id: 'PHY-101',
+        Title: 'Physical Principles',
+        Department_name: 'Physics',
+        Credits: 4
+      }
+    ]
+  },
+  {
+    Teaches: [
+      {
+        Course_id: 'HIS-351',
+        Title: 'World History',
+        Department_name: 'History',
+        Credits: 3
+      }
+    ]
+  },
+  {
+    Teaches: [
+      { Course_id: '', Title: '', Department_name: '', Credits: null }
+    ]
+  },
+  {
+    Teaches: [
+      {
+        Course_id: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4
+      },
+      {
+        Course_id: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3
+      }
+    ]
+  },
+  {
+    Teaches: [
+      { Course_id: '', Title: '', Department_name: '', Credits: null }
+    ]
+  },
+  {
+    Teaches: [
+      { Course_id: '', Title: '', Department_name: '', Credits: null }
+    ]
+  },
+  {
+    Teaches: [
+      {
+        Course_id: 'BIO-101',
+        Title: 'Intro. to Biology',
+        Department_name: 'Biology',
+        Credits: 4
+      },
+      {
+        Course_id: 'BIO-301',
+        Title: 'Genetics',
+        Department_name: 'Biology',
+        Credits: 4
+      }
+    ]
+  },
+  {
+    Teaches: [
+      {
+        Course_id: 'CS-190',
+        Title: 'Game Design',
+        Department_name: 'Comp. Sci.',
+        Credits: 4
+      },
+      {
+        Course_id: 'CS-190',
+        Title: 'Game Design',
+        Department_name: 'Comp. Sci.',
+        Credits: 4
+      },
+      {
+        Course_id: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3
+      }
+    ]
+  },
+  {
+    Teaches: [
+      {
+        Course_id: 'EE-181',
+        Title: 'Intro. to Digital Systems',
+        Department_name: 'Elec. Eng.',
+        Credits: 3
+      }
+    ]
+  },
+  {
+    Teaches: [
+      {
+        Course_id: 'BIO-399',
+        Title: 'Computational Biology',
+        Department_name: 'Biology',
+        Credits: 3
+      }
+    ]
+  }
+]
+University> db.TEACHER.updateMany({},{$set:{"Date_of_Join":null}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":10101},{"$set":{"Date_of_Join":new Date("1980-10-12")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":12121},{"$set":{"Date_of_Join":new Date("1977-08-11")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":15151},{"$set":{"Date_of_Join":new Date("1965-01-23")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":22222},{"$set":{"Date_of_Join":new Date("1998-05-02")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":32343},{"$set":{"Date_of_Join":new Date("1987-04-19")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":33456},{"$set":{"Date_of_Join":new Date("1992-09-21")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":45565},{"$set":{"Date_of_Join":new Date("1954-03-16")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":58583},{"$set":{"Date_of_Join":new Date("1970-11-29")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":76543},{"$set":{"Date_of_Join":new Date("1983-12-26")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":76766},{"$set":{"Date_of_Join":new Date("1961-06-07")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":83821},{"$set":{"Date_of_Join":new Date("1969-04-12")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateOne({"ID":98345},{"$set":{"Date_of_Join":new Date("1973-09-21")}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateMany({},{"$rename":{"Dept_name":"Department"}},false,true)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.createCollection("rough")
+{ ok: 1 }
+University> db.rough.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year"}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.rough1.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Building":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.rough1.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Building":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Bu
+Uncaught:
+SyntaxError: Unterminated string constant. (1:358)
+
+> 1 | db.rough1.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Building":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Bu
+    |
+
+                                                                                                  ^
+  2 |
+
+University> db.rough3.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Building":"$$this.Building","Budget":"$$this.Budget"}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.TEACHER.find({})
+[
+  {
+    _id: ObjectId("65143d5a15f0b19281888df0"),
+    ID: 10101,
+    Name: 'Srinivasan',
+    Salary: 65000,
+    Teaches: [
+      {
+        Course_id: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      },
+      {
+        Course_id: 'CS-315',
+        Title: 'Robotics',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      },
+      {
+        Course_id: 'CS-347',
+        Title: 'Database System Concepts',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1980-10-12T00:00:00.000Z"),
+    Department: 'Comp. Sci.'
+  },
+  {
+    _id: ObjectId("65143f1b15f0b19281888df1"),
+    ID: 12121,
+    Name: 'Wu',
+    Salary: 90000,
+    Teaches: [
+      {
+        Course_id: 'FIN-201',
+        Title: 'Investment Banking',
+        Department_name: 'Finance',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Painter', Budget: 120000 }
+      }
+    ],
+    Date_of_Join: ISODate("1977-08-11T00:00:00.000Z"),
+    Department: 'Finance'
+  },
+  {
+    _id: ObjectId("65143fa315f0b19281888df2"),
+    ID: 15151,
+    Name: 'Mozart',
+    Salary: 40000,
+    Teaches: [
+      {
+        Course_id: 'MU-199',
+        Title: 'Music Video Production',
+        Department_name: 'Music',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Packard', Budget: 80000 }
+      }
+    ],
+    Date_of_Join: ISODate("1965-01-23T00:00:00.000Z"),
+    Department: 'Music'
+  },
+  {
+    _id: ObjectId("651440df15f0b19281888df3"),
+    ID: 22222,
+    Name: 'Einstein',
+    Salary: 95000,
+    Teaches: [
+      {
+        Course_id: 'PHY-101',
+        Title: 'Physical Principles',
+        Department_name: 'Physics',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Watson', Budget: 70000 }
+      }
+    ],
+    Date_of_Join: ISODate("1998-05-02T00:00:00.000Z"),
+    Department: 'Physics'
+  },
+  {
+    _id: ObjectId("6514424115f0b19281888df4"),
+    ID: 32343,
+    Name: 'El Said',
+    Salary: 60000,
+    Teaches: [
+      {
+        Course_id: 'HIS-351',
+        Title: 'World History',
+        Department_name: 'History',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Painter', Budget: 50000 }
+      }
+    ],
+    Date_of_Join: ISODate("1987-04-19T00:00:00.000Z"),
+    Department: 'History'
+  },
+  {
+    _id: ObjectId("651442ba15f0b19281888df5"),
+    ID: 33456,
+    Name: 'Gold',
+    Salary: 87000,
+    Teaches: [
+      {
+        Course_id: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Building: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1992-09-21T00:00:00.000Z"),
+    Department: 'Physics'
+  },
+  {
+    _id: ObjectId("651443a615f0b19281888df6"),
+    ID: 45565,
+    Name: 'Katz',
+    Salary: 75000,
+    Teaches: [
+      {
+        Course_id: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      },
+      {
+        Course_id: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1954-03-16T00:00:00.000Z"),
+    Department: 'Comp. Sci.'
+  },
+  {
+    _id: ObjectId("6514441615f0b19281888df7"),
+    ID: 58583,
+    Name: 'Califieri',
+    Salary: 62000,
+    Teaches: [
+      {
+        Course_id: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Building: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1970-11-29T00:00:00.000Z"),
+    Department: 'History'
+  },
+  {
+    _id: ObjectId("6514445b15f0b19281888df8"),
+    ID: 76543,
+    Name: 'Singh',
+    Salary: 80000,
+    Teaches: [
+      {
+        Course_id: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Building: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1983-12-26T00:00:00.000Z"),
+    Department: 'Finance'
+  },
+  {
+    _id: ObjectId("6514453915f0b19281888df9"),
+    ID: 76766,
+    Name: 'Crick',
+    Salary: 72000,
+    Teaches: [
+      {
+        Course_id: 'BIO-101',
+        Title: 'Intro. to Biology',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Watson', Budget: 90000 }
+      },
+      {
+        Course_id: 'BIO-301',
+        Title: 'Genetics',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: 'BIO-101',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Watson', Budget: 90000 }
+      }
+    ],
+    Date_of_Join: ISODate("1961-06-07T00:00:00.000Z"),
+    Department: 'Biology'
+  },
+  {
+    _id: ObjectId("6514461a15f0b19281888dfa"),
+    ID: 83821,
+    Name: 'Brandt',
+    Salary: 92000,
+    Teaches: [
+      {
+        Course_id: 'CS-190',
+        Title: 'Game Design',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      },
+      {
+        Course_id: 'CS-190',
+        Title: 'Game Design',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: 'CS-101',
+        Sec_id: 2,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      },
+      {
+        Course_id: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 2,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Building: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1969-04-12T00:00:00.000Z"),
+    Department: 'Comp. Sci.'
+  },
+  {
+    _id: ObjectId("6514469d15f0b19281888dfb"),
+    ID: 98345,
+    Name: 'Kim',
+    Salary: 80000,
+    Teaches: [
+      {
+        Course_id: 'EE-181',
+        Title: 'Intro. to Digital Systems',
+        Department_name: 'Elec. Eng.',
+        Credits: 3,
+        Prereq_id: 'PHY-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Building: 'Taylor', Budget: 85000 }
+      }
+    ],
+    Date_of_Join: ISODate("1973-09-21T00:00:00.000Z"),
+    Department: 'Elec. Eng.'
+  },
+  {
+    _id: ObjectId("651446f915f0b19281888dfc"),
+    ID: null,
+    Name: '',
+    Salary: null,
+    Teaches: [
+      {
+        Course_id: 'BIO-399',
+        Title: 'Computational Biology',
+        Department_name: 'Biology',
+        Credits: 3,
+        Prereq_id: 'BIO-101',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Building: 'Watson', Budget: 90000 }
+      }
+    ],
+    Date_of_Join: null,
+    Department: ''
+  }
+]
+University> db.rough4.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Teaches_Dept":{"Building":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.TEACHER.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Teaches_Dept":{"Building":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.rough1.drop()
+true
+University> db.rough2.drop()
+false
+University> db.rough3.drop()
+true
+University> db.rough4.drop()
+true
+University> db.rough.drop()
+true
+University> db.TEACHER.renameCollection("FACULTY_INFO")
+{ ok: 1 }
+University> db.FACULTY_INFO.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Sub_Code","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Teaches_Dept":{"Builder":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO.drop()
+true
+University> db.createCollection("FACULTY_INFO")
+{ ok: 1 }
+University> db.rough1.drop()
+false
+University> db.FACULTY_INFO.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Teaches_Dept":{"Building":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.createCollection("rough")
+{ ok: 1 }
+University> db.rough.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Teaches_Dept":{"Building":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.rough.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Sub_Code","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Teaches_Dept":{"Builder":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Sub_code","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Teaches_Dept":{"Building":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Sub_code","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Teaches_Dept":{"Builder":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO.find({"Department_name":{"$in":['Physics','Music','Finance','Biology']}},{"Name":1,"Teaches.Sub_code":1,"Teaches.Title":1,"Teaches.Credits":1,"_id":0})
+
+University> db.FACULTY_INFO.find({"Teaches.Department_name":{"$in":['Physics','Music','Finance','Biology']}},{"Name":1,"Teaches.Sub_code":1,"Teaches.Title":1,"Teaches.Credits":1,"_id":0})
+[
+  {
+    Name: 'Wu',
+    Teaches: [
+      { Sub_code: 'FIN-201', Title: 'Investment Banking', Credits: 3 }
+    ]
+  },
+  {
+    Name: 'Mozart',
+    Teaches: [
+      {
+        Sub_code: 'MU-199',
+        Title: 'Music Video Production',
+        Credits: 3
+      }
+    ]
+  },
+  {
+    Name: 'Einstein',
+    Teaches: [
+      { Sub_code: 'PHY-101', Title: 'Physical Principles', Credits: 4 }
+    ]
+  },
+  {
+    Name: 'Crick',
+    Teaches: [
+      { Sub_code: 'BIO-101', Title: 'Intro. to Biology', Credits: 4 },
+      { Sub_code: 'BIO-301', Title: 'Genetics', Credits: 4 }
+    ]
+  },
+  {
+    Name: '',
+    Teaches: [
+      {
+        Sub_code: 'BIO-399',
+        Title: 'Computational Biology',
+        Credits: 3
+      }
+    ]
+  }
+]
+University> db.FACULTY_INFO.find({"Name":{$regex:/K/},"Salary":{"$gt":65000}})
+[
+  {
+    _id: ObjectId("651443a615f0b19281888df6"),
+    ID: 45565,
+    Name: 'Katz',
+    Salary: 75000,
+    Teaches: [
+      {
+        Sub_code: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1954-03-16T00:00:00.000Z"),
+    Department: 'Comp. Sci.'
+  },
+  {
+    _id: ObjectId("6514469d15f0b19281888dfb"),
+    ID: 98345,
+    Name: 'Kim',
+    Salary: 80000,
+    Teaches: [
+      {
+        Sub_code: 'EE-181',
+        Title: 'Intro. to Digital Systems',
+        Department_name: 'Elec. Eng.',
+        Credits: 3,
+        Prereq_id: 'PHY-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 85000 }
+      }
+    ],
+    Date_of_Join: ISODate("1973-09-21T00:00:00.000Z"),
+    Department: 'Elec. Eng.'
+  }
+]
+University> db.FACULTY_INFO.find({"Salary":{"$gte":60000,"$lte":80000}})
+[
+  {
+    _id: ObjectId("65143d5a15f0b19281888df0"),
+    ID: 10101,
+    Name: 'Srinivasan',
+    Salary: 65000,
+    Teaches: [
+      {
+        Sub_code: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-315',
+        Title: 'Robotics',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-347',
+        Title: 'Database System Concepts',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1980-10-12T00:00:00.000Z"),
+    Department: 'Comp. Sci.'
+  },
+  {
+    _id: ObjectId("6514424115f0b19281888df4"),
+    ID: 32343,
+    Name: 'El Said',
+    Salary: 60000,
+    Teaches: [
+      {
+        Sub_code: 'HIS-351',
+        Title: 'World History',
+        Department_name: 'History',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Painter', Budget: 50000 }
+      }
+    ],
+    Date_of_Join: ISODate("1987-04-19T00:00:00.000Z"),
+    Department: 'History'
+  },
+  {
+    _id: ObjectId("651443a615f0b19281888df6"),
+    ID: 45565,
+    Name: 'Katz',
+    Salary: 75000,
+    Teaches: [
+      {
+        Sub_code: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1954-03-16T00:00:00.000Z"),
+    Department: 'Comp. Sci.'
+  },
+  {
+    _id: ObjectId("6514441615f0b19281888df7"),
+    ID: 58583,
+    Name: 'Califieri',
+    Salary: 62000,
+    Teaches: [
+      {
+        Sub_code: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Builder: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1970-11-29T00:00:00.000Z"),
+    Department: 'History'
+  },
+  {
+    _id: ObjectId("6514445b15f0b19281888df8"),
+    ID: 76543,
+    Name: 'Singh',
+    Salary: 80000,
+    Teaches: [
+      {
+        Sub_code: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Builder: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1983-12-26T00:00:00.000Z"),
+    Department: 'Finance'
+  },
+  {
+    _id: ObjectId("6514453915f0b19281888df9"),
+    ID: 76766,
+    Name: 'Crick',
+    Salary: 72000,
+    Teaches: [
+      {
+        Sub_code: 'BIO-101',
+        Title: 'Intro. to Biology',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Watson', Budget: 90000 }
+      },
+      {
+        Sub_code: 'BIO-301',
+        Title: 'Genetics',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: 'BIO-101',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Watson', Budget: 90000 }
+      }
+    ],
+    Date_of_Join: ISODate("1961-06-07T00:00:00.000Z"),
+    Department: 'Biology'
+  },
+  {
+    _id: ObjectId("6514469d15f0b19281888dfb"),
+    ID: 98345,
+    Name: 'Kim',
+    Salary: 80000,
+    Teaches: [
+      {
+        Sub_code: 'EE-181',
+        Title: 'Intro. to Digital Systems',
+        Department_name: 'Elec. Eng.',
+        Credits: 3,
+        Prereq_id: 'PHY-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 85000 }
+      }
+    ],
+    Date_of_Join: ISODate("1973-09-21T00:00:00.000Z"),
+    Department: 'Elec. Eng.'
+  }
+]
+University> db.FACULTY_INFO.find({"Name":{"$regex":/^[A-Z][r][a-z]*/}})
+[
+  {
+    _id: ObjectId("65143d5a15f0b19281888df0"),
+    ID: 10101,
+    Name: 'Srinivasan',
+    Salary: 65000,
+    Teaches: [
+      {
+        Sub_code: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-315',
+        Title: 'Robotics',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-347',
+        Title: 'Database System Concepts',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1980-10-12T00:00:00.000Z"),
+    Department: 'Comp. Sci.'
+  },
+  {
+    _id: ObjectId("6514453915f0b19281888df9"),
+    ID: 76766,
+    Name: 'Crick',
+    Salary: 72000,
+    Teaches: [
+      {
+        Sub_code: 'BIO-101',
+        Title: 'Intro. to Biology',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Watson', Budget: 90000 }
+      },
+      {
+        Sub_code: 'BIO-301',
+        Title: 'Genetics',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: 'BIO-101',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Watson', Budget: 90000 }
+      }
+    ],
+    Date_of_Join: ISODate("1961-06-07T00:00:00.000Z"),
+    Department: 'Biology'
+  },
+  {
+    _id: ObjectId("6514461a15f0b19281888dfa"),
+    ID: 83821,
+    Name: 'Brandt',
+    Salary: 92000,
+    Teaches: [
+      {
+        Sub_code: 'CS-190',
+        Title: 'Game Design',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-190',
+        Title: 'Game Design',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: 'CS-101',
+        Sec_id: 2,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 2,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1969-04-12T00:00:00.000Z"),
+    Department: 'Comp. Sci.'
+  }
+]
+University> db.FACULTY_INFO.find({"Department":"Comp. Sci."},{"Name":1}).sort({"Salary":-1})
+[
+  { _id: ObjectId("6514461a15f0b19281888dfa"), Name: 'Brandt' },
+  { _id: ObjectId("651443a615f0b19281888df6"), Name: 'Katz' },
+  { _id: ObjectId("65143d5a15f0b19281888df0"), Name: 'Srinivasan' }
+]
+University> db.FACULTY_INFO.find({"Department":"Comp. Sci."},{"Name":1,"_id":0}).sort({"Salary":-1})
+[ { Name: 'Brandt' }, { Name: 'Katz' }, { Name: 'Srinivasan' } ]
+University> db.FACULTY_INFO2.updateMany({},[{"$set":{"Salary":{"$add":[{"$multiply":["$Salary",0.15]},"$Salary"]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 12,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO3.updateMany({"Department":"Comp. Sci.","Salary":{"$lt":70000}},[{"$set":{"Salary":{"$add":[{"$multiply":["$Salary",0.03]},"$Salary"]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO.updateMany({},[{"$set":{"Annual_Salary":{"$multiply":["$Salary",12]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO.updateMany({"Teaches.Title":"Game Design"},[{"$set":{"Teaches.Title":"Game Theory"}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO4.updateMany({},{"$set":{"Gross_Salary":{"$add":[{"$multiply":[{"$add":[1.05,0.2]},"$Salary"]}]},"Net_Salary":{"$subtract":["$Gross_Salary",{"$add":[{"$multiply":["$Salary",0.3]},"$Salary"]}]}}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO4.updateMany({},[{"$set":{"Gross_Salary":{"$add":[{"$multiply":[{"$add":[1.05,0.2]},"$Salary"]}]},"Net_Salary":{"$subtract":["$Gross_Salary",{"$add":[{"$multiply":["$Salary",0.3]},"$Salary"]}]}}}])
+MongoServerError: can't $subtract double from object
+University> db.FACULTY_INFO4.updateMany({},[{"$set":{"Gross_Salary":{"$add":[{"$multiply":[{"$add":[1.05,0.2]},"$Salary"]}]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO4.updateMany({},[{"$set":{"Gross_Salary":{"$add":[{"$multiply":[{"$add":[1.05,0.2]},"$Salary"]},"$Salary"]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 12,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO4.updateMany({},[{"$set":{"Net_Salary":{"$subtract":["$Gross_Salary",{"$add":[{"$multiply":["$Salary",0.3]},"$Salary"]}]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO4.updateMany({},[{"$set":{"Net_Salary":{"$subtract":["$Gross_Salary",{"$add":["$Salary",{"$multiply":["$Salary",0.3]}]}]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO4.updateMany({"ID":10101},[{"$set":{"Net_Salary":{"$subtract":["$Gross_Salary",{"$add":["$Salary",{"$multiply":["$Salary",0.3]}]}]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO4.updateMany({"ID":10101},[{"$set":{"Net_Salary":{"$subtract":["$Gross_Salary",{"$add":["$S
+Uncaught:
+SyntaxError: Unterminated string constant. (1:103)
+
+> 1 | db.FACULTY_INFO4.updateMany({"ID":10101},[{"$set":{"Net_Salary":{"$subtract":["$Gross_Salary",{"$add":["$S
+    |                                                                                                        ^
+  2 |
+
+University> db.FACULTY_INFO4.updateMany({},[{"$set":{"Net_Salary":{"$subtract":[{"$add":["$Salary",{"$multiply":["$Salary",0.3]}]},"$Gross_Salary"]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 12,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO4.updateMany({},[{"$set":{"Net_Salary":{"$subtract":["$Gross_Salary",{"$multiply":["$Salary",0.3]}]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 12,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO4.updateMany({},[{"$set":{"Net_Salary":{"$subtract":[{"$add":["$Salary",{"$multiply":["$Salary
+Uncaught:
+SyntaxError: Unterminated string constant. (1:101)
+
+> 1 | db.FACULTY_INFO4.updateMany({},[{"$set":{"Net_Salary":{"$subtract":[{"$add":["$Salary",{"$multiply":["$Salary
+    |                                                                                                      ^
+  2 |
+
+University> db.FACULTY_INFO.updateMany({},[{"$set":{"Gross_Salary":{"$add":[{"$multiply":[{"$add":[1.05,0.2]},"$Salary"]},"$Salary"]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO.updateMany({},[{"$set":{"Net_Salary":{"$subtract":["$Gross_Salary",{"$multiply":["$Salary",0.3]}]}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"_id":null,"Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"Avg_Salary":1}}])
+[ { _id: null, Avg_Salary: 91000 } ]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"Avg_Salary":1}}])
+MongoServerError: a group specification must include an _id
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"Avg_Sa
+Uncaught:
+SyntaxError: Unterminated string constant. (1:74)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"Avg_Sa
+    |                                                                           ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"Avg_Salary":1}}])
+[ { _id: 1, Avg_Salary: 91000 } ]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"Avg_Salary":1,"_id":0}}])
+[ { Avg_Salary: 91000 } ]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"Avg_Salary":1,"_id":0,"Department":1}}])
+[ { Avg_Salary: 91000 } ]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"},"Department":1}},{"$project":{"Avg_Salary":1,"_id":0,"Department":1}}])
+MongoServerError: The field 'Department' must be an accumulator object
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"},"Department":1}},{"$project":{"Avg_Salary":1,"_id":0,"Department":"Physics}}])
+Uncaught:
+SyntaxError: Unterminated string constant. (1:180)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"},"Department":1}},{"$project":{"Avg_Salary":1,"_id":0,"Department":"Physics}}])
+    |
+                                                     ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"},"Department":1}},{"$project":{"Avg_Salary":1,"_id":0,"Department":"Physics"}}])
+MongoServerError: The field 'Department' must be an accumulator object
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"},"Department":"Physics"}},{"$project":{"Avg_Salary":1,"_id":0,"Department":1}}])
+MongoServerError: The field 'Department' must be an accumulator object
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":1}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"Avg_Salary":1,"_id":0}}])
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":1}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"Avg_Salary":1,"_id":0,"Department":1}}])
+
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"Avg_Salary":1,"_id":0,"Department":1}}])
+[
+  { Avg_Salary: 91000 },
+  { Avg_Salary: 40000 },
+  { Avg_Salary: 72000 },
+  { Avg_Salary: 80000 },
+  { Avg_Salary: 61000 },
+  { Avg_Salary: null },
+  { Avg_Salary: 77333.33333333333 },
+  { Avg_Salary: 85000 }
+]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"Avg_Salary":1,"_id":0,"Department":"$_id"}}])
+[
+  { Avg_Salary: 61000, Department: 'History' },
+  { Avg_Salary: null, Department: '' },
+  { Avg_Salary: 77333.33333333333, Department: 'Comp. Sci.' },
+  { Avg_Salary: 85000, Department: 'Finance' },
+  { Avg_Salary: 72000, Department: 'Biology' },
+  { Avg_Salary: 91000, Department: 'Physics' },
+  { Avg_Salary: 40000, Department: 'Music' },
+  { Avg_Salary: 80000, Department: 'Elec. Eng.' }
+]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"_id":0,"Department":"$_id","Avg_Salary":1}}])
+[
+  { Avg_Salary: 72000, Department: 'Biology' },
+  { Avg_Salary: 91000, Department: 'Physics' },
+  { Avg_Salary: 40000, Department: 'Music' },
+  { Avg_Salary: 80000, Department: 'Elec. Eng.' },
+  { Avg_Salary: 61000, Department: 'History' },
+  { Avg_Salary: null, Department: '' },
+  { Avg_Salary: 77333.33333333333, Department: 'Comp. Sci.' },
+  { Avg_Salary: 85000, Department: 'Finance' }
+]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Avg_Salary":{"$avg":"$Salary"}}},{"$match":{"Department":{"$ne":""}}},{"$project":{"_id":0,"Department":"$_id","Avg_Salary":1}}])
+[
+  { Avg_Salary: 91000, Department: 'Physics' },
+  { Avg_Salary: 85000, Department: 'Finance' },
+  { Avg_Salary: 77333.33333333333, Department: 'Comp. Sci.' },
+  { Avg_Salary: 61000, Department: 'History' },
+  { Avg_Salary: 80000, Department: 'Elec. Eng.' },
+  { Avg_Salary: 72000, Department: 'Biology' },
+  { Avg_Salary: null, Department: '' },
+  { Avg_Salary: 40000, Department: 'Music' }
+]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Avg_Salary":{"$avg":"$Salary"}}},{"$match":{"Avg_Salary":{"$ne":null}}},{"$project":{"_id":0,"Department":"$_id","Avg_Salary":1}}])
+[
+  { Avg_Salary: 91000, Department: 'Physics' },
+  { Avg_Salary: 85000, Department: 'Finance' },
+  { Avg_Salary: 77333.33333333333, Department: 'Comp. Sci.' },
+  { Avg_Salary: 61000, Department: 'History' },
+  { Avg_Salary: 80000, Department: 'Elec. Eng.' },
+  { Avg_Salary: 72000, Department: 'Biology' },
+  { Avg_Salary: 40000, Department: 'Music' }
+]
+University> db.FACULTY_INFO.find({"ID":1,"Name":1,"Department":1}).sort({"Salary":-1}).limit(1)
+
+University> db.FACULTY_INFO.find({"ID":1,"Name":1,"Department":1}).sort({"Salary":-1}).limit(2)
+
+University> db.FACULTY_INFO.find({"ID":1,"Name":1,"Department":1}).limit(1).sort({"Salary":-1})
+
+University> db.FACULTY_INFO.find({},{"ID":1,"Name":1,"Department":1}).sort({"Salary":-1}).limit(1)
+[
+  {
+    _id: ObjectId("651440df15f0b19281888df3"),
+    ID: 22222,
+    Name: 'Einstein',
+    Department: 'Physics'
+  }
+]
+University> db.FACULTY_INFO.find({},{"ID":1,"Name":1,"Department":1,"Salary":1}).sort({"Salary":-1}).limit(1)
+[
+  {
+    _id: ObjectId("651440df15f0b19281888df3"),
+    ID: 22222,
+    Name: 'Einstein',
+    Salary: 95000,
+    Department: 'Physics'
+  }
+]
+University> db.FACULTY_INFO.find({"Department":"Comp. Sci."}).count()
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Comp. Sci."}},{"$group":{"_id":1,"Total_credits":{"$sum":"$Teaches.Credits"}}},{"$project":{"_id":0,"Total_credits":1}}])
+[ { Total_credits: 0 } ]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Comp. Sci."}},{"$group":{"_id":1,"Total_credits":{"$add":"$Teaches.Credits"}}},{"$project":{"_id":0,"Total_credits":1}}])
+MongoServerError: unknown group operator '$add'
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Comp. Sci."}},{"$group":{"_id":null,"Total_credits":{"$add":"$Teaches.Credits"}}},{"$project":{"_id":0,"Total_credits":1}}])
+MongoServerError: unknown group operator '$add'
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Comp. Sci."}},{"$group":{"_id":1,"Total_credits":{"$add":"$Teaches.Credits"}}},{"$project":{"_id":0,"Total_credits":1}}])
+MongoServerError: unknown group operator '$add'
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Comp. Sci."}},{"$group":{"_id":null,"Total_credits":{"$sum":"$Teaches.Credits"}}},{"$project":{"_id":0,"Total_credits":1}}])
+[ { Total_credits: 0 } ]
+University> db.FACULTY_INFO4.aggregate([{"$match":{"Department":"Comp. Sci."}},{"$unwind":"$Teaches"},{"$group":{"_id":null,"Total_credits":{"$sum":"$Teaches.Credits"}}},{"$project":{"_id":0,"Total_credits":1}}])
+[ { Total_credits: 28 } ]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":null},"Department":{"$in":["Comp. Sci.","Physics"]}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Department":{"$in":["Comp. Sci.","Physics"]}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Department":{"$in",["Comp. Sci.","Physics"]}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+Uncaught:
+SyntaxError: Unexpected token (1:124)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Department":{"$in",["Comp. Sci.","Physics"]}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+    |
+                  ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":null}}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:134)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":null}}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+    |
+                            ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":null}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+[
+  { Total_Salary: 232000, Department: 'Comp. Sci.' },
+  { Total_Salary: 170000, Department: 'Finance' },
+  { Total_Salary: 182000, Department: 'Physics' },
+  { Total_Salary: 40000, Department: 'Music' },
+  { Total_Salary: 72000, Department: 'Biology' },
+  { Total_Salary: 80000, Department: 'Elec. Eng.' },
+  { Total_Salary: 122000, Department: 'History' },
+  { Total_Salary: 0, Department: '' }
+]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+[
+  { Total_Salary: 232000, Department: 'Comp. Sci.' },
+  { Total_Salary: 170000, Department: 'Finance' },
+  { Total_Salary: 182000, Department: 'Physics' },
+  { Total_Salary: 40000, Department: 'Music' },
+  { Total_Salary: 72000, Department: 'Biology' },
+  { Total_Salary: 80000, Department: 'Elec. Eng.' },
+  { Total_Salary: 122000, Department: 'History' }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"$and":[{"Department":"Comp. Sci."},{"Department":"Physics"}]}}{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:101)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$match":{"$and":[{"Department":"Comp. Sci."},{"Department":"Physics"}]}}{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+    |                                                                                                      ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"$and":[{"Department":"Comp. Sci."},{"Department":"Physics"}]}},{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Comp. Sci."}}},{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:65)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$match":{"Department":"Comp. Sci."}}},{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+    |                                                                  ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":"Comp. Sci."}},{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+[ { Total_Salary: 232000, Department: 'Comp. Sci.' } ]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$in":["Comp. Sci.","Physics"]}}},{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+[
+  { Total_Salary: 232000, Department: 'Comp. Sci.' },
+  { Total_Salary: 182000, Department: 'Physics' }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$in":["Comp. Sci.","Physics"]}}},{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Depart)
+Uncaught:
+SyntaxError: Unterminated string constant. (1:212)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$in":["Comp. Sci.","Physics"]}}},{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Depart)
+    |
+                                                                                                          ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$in":["Comp. Sci.","Physics"]}}},{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"},"No_of_Instructors":{"$count":"$ID"}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1,"No_of_Instructors":1}}])
+MongoServerError: $count takes no arguments, i.e. $count:{}
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$in":["Comp. Sci.","Physics"]}}},{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"},"No_of_Instructors":{"$count":{}}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1,"No_of_Instructors":1}}])
+[
+  {
+    Total_Salary: 232000,
+    No_of_Instructors: 3,
+    Department: 'Comp. Sci.'
+  },
+  { Total_Salary: 182000, No_of_Instructors: 2, Department: 'Physics' }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$in":["Comp. Sci.","Biology"]}}},{"$unwind":"$Teaches"},{"$group":{"_id":null,"Total_credits":{"$sum":"$Teaches.Credits"}}},{"$project":{"_id":0,"Department":1,"Total_credits":1}}])
+[ { Total_credits: 36 } ]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$in":["Comp. Sci.","Biology"]}}},{"$unwind":"$Teaches"},{"$group":{"_id":"$Department","Total_credits":{"$sum":"$Teaches.Credits"}}},{"$project":{"_id":0,"Department":"$_id","Total_credits":1}}])
+[
+  { Total_credits: 28, Department: 'Comp. Sci.' },
+  { Total_credits: 8, Department: 'Biology' }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Teaches.Department_name":{"$in":["Comp. Sci.","Biology"]}}},{"$unwind":"$Teaches"},{"$group":{"_id":"$Teaches.Department_name","Total_credits":{"$sum":"$Teaches.Credits"}}},{"$project":{"_id":0,"Teaches.Department_name":"$_id","Total_credits":1}}])
+[
+  { Total_credits: 28, Teaches: { Department_name: 'Comp. Sci.' } },
+  { Total_credits: 11, Teaches: { Department_name: 'Biology' } }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Teaches.Department_name":"Comp. Sci."}},{"$unwind":"$Teaches"},{"$group":{"_id":"$Teaches.Department_name","Total_credits":{"$sum":"$Teaches.Credits"}}},{"$project":{"_id":0,"Teaches.Department_name":"$_id","Total_credits":1}}])
+[ { Total_credits: 28, Teaches: { Department_name: 'Comp. Sci.' } } ]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Teaches.Teaches_Dept.Builder","Total_budget":{"$sum":"$Budget"}}},{"$match":{"Total_budget":{"$ne":0}}},{"$project":{"_id":0,"Teaches.Teaches_Dept.Builder":"$_id","Total_budget":1}}])
+
+University> db.FACULTY_INFO.aggregate([{"$unwind":"$Teaches"},{"$group":{"_id":"$Teaches.Teaches_Dept.Builder","Total_budget":{"$sum":"$Budget"}}},{"$match":{"Total_budget":{"$ne":0}}},{"$project":{"_id":0,"Teaches.Teaches_Dept.Builder":"$_id","Total_budget":1}}])
+
+University> db.FACULTY_INFO.aggregate([{"$unwind":"$Teaches"},{"$group":{"_id":"$Teaches.Teaches_Dept.Builder","Total_budget":{"$sum":"$Teaches.Teaches_Dept.Budget"}}},{"$match":{"Total_budget":{"$ne":0}}},{"$project":{"_id":0,"Teaches.Teaches_Dept.Builder":"$_id","Total_budget":1}}])
+[
+  {
+    Total_budget: 885000,
+    Teaches: { Teaches_Dept: { Builder: 'Taylor' } }
+  },
+  {
+    Total_budget: 340000,
+    Teaches: { Teaches_Dept: { Builder: 'Watson' } }
+  },
+  {
+    Total_budget: 80000,
+    Teaches: { Teaches_Dept: { Builder: 'Packard' } }
+  },
+  {
+    Total_budget: 170000,
+    Teaches: { Teaches_Dept: { Builder: 'Painter' } }
+  }
+]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Teaches.Teaches_Dept.Builder","Total_budget":{"$sum":"$Teaches.Teaches_Dept.Budget"}}},{"$match":{"Total_budget":{"$ne":0}}},{"$project":{"_id":0,"Teaches.Teaches_Dept.Builder":"$_id","Total_budget":1}}])
+
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","No_of_Instructors":{"$count":{}}}},{"$project":{"_id":0,"Department":"$_id","No_of_Instructors":1}}])
+[
+  { No_of_Instructors: 3, Department: 'Comp. Sci.' },
+  { No_of_Instructors: 2, Department: 'Finance' },
+  { No_of_Instructors: 2, Department: 'Physics' },
+  { No_of_Instructors: 1, Department: 'Music' },
+  { No_of_Instructors: 1, Department: 'Biology' },
+  { No_of_Instructors: 1, Department: 'Elec. Eng.' },
+  { No_of_Instructors: 2, Department: 'History' },
+  { No_of_Instructors: 1, Department: '' }
+]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","No_of_Instructors":{"$count":{}}}},{"$project":{"_id":0,"Department":"$_id","No_of_Instructors"
+...
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","No_of_Instructors":{"$count":{}}}},{"$match":{"Department":{"$ne":""}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1,"No_of_Instructors":1}}])
+[
+  { No_of_Instructors: 1, Department: 'Biology' },
+  { No_of_Instructors: 2, Department: 'Physics' },
+  { No_of_Instructors: 1, Department: 'Music' },
+  { No_of_Instructors: 1, Department: 'Elec. Eng.' },
+  { No_of_Instructors: 2, Department: 'History' },
+  { No_of_Instructors: 1, Department: '' },
+  { No_of_Instructors: 3, Department: 'Comp. Sci.' },
+  { No_of_Instructors: 2, Department: 'Finance' }
+]
+University> db.FACULTY_INFO.aggregate([{ "$group": { "_id": "$Department", "No_of_Instructors": { "$count": {} } } }, { "$match": { "Department": { "$ne": "" } } }, { "$project": { "_id": 0,"No_of_Instructors": 1,"Department":"_id"}}])
+[
+  { No_of_Instructors: 3, Department: '_id' },
+  { No_of_Instructors: 2, Department: '_id' },
+  { No_of_Instructors: 1, Department: '_id' },
+  { No_of_Instructors: 1, Department: '_id' },
+  { No_of_Instructors: 1, Department: '_id' },
+  { No_of_Instructors: 1, Department: '_id' },
+  { No_of_Instructors: 2, Department: '_id' },
+  { No_of_Instructors: 2, Department: '_id' }
+]
+University> db.FACULTY_INFO.aggregate([{ "$group": { "_id": "$Department", "No_of_Instructors": { "$count": {} } } }, { "$match": { "Department": { "$ne": "" } } }, { "$project": { "_id": 0,"No_of_Instructors": 1,"Department":"$_id"}}])
+[
+  { No_of_Instructors: 3, Department: 'Comp. Sci.' },
+  { No_of_Instructors: 2, Department: 'History' },
+  { No_of_Instructors: 1, Department: 'Elec. Eng.' },
+  { No_of_Instructors: 1, Department: 'Biology' },
+  { No_of_Instructors: 1, Department: '' },
+  { No_of_Instructors: 1, Department: 'Music' },
+  { No_of_Instructors: 2, Department: 'Physics' },
+  { No_of_Instructors: 2, Department: 'Finance' }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":""}}},{"$group":{"_id":"$Department","No_of_Instructors":{"$count":{}}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1,"No_of_Instructors":1}}])
+[
+  { No_of_Instructors: 1, Department: 'Biology' },
+  { No_of_Instructors: 2, Department: 'History' },
+  { No_of_Instructors: 2, Department: 'Finance' },
+  { No_of_Instructors: 1, Department: 'Elec. Eng.' },
+  { No_of_Instructors: 3, Department: 'Comp. Sci.' },
+  { No_of_Instructors: 1, Department: 'Music' },
+  { No_of_Instructors: 2, Department: 'Physics' }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":""}}},{"$group":{"_id":"$Department","No_of_Instructors":{"$count":{}}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1,"No_of_Instructors":1}}]).sort({"No_of_Instructors":-1})
+[
+  { No_of_Instructors: 3, Department: 'Comp. Sci.' },
+  { No_of_Instructors: 2, Department: 'History' },
+  { No_of_Instructors: 2, Department: 'Finance' },
+  { No_of_Instructors: 2, Department: 'Physics' },
+  { No_of_Instructors: 1, Department: 'Biology' },
+  { No_of_Instructors: 1, Department: 'Music' },
+  { No_of_Instructors: 1, Department: 'Elec. Eng.' }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":""}}},{"$group":{"_id":"$Department","No_of_Instructors":{"$count":{}}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1,"No_of_Ins
+Uncaught:
+SyntaxError: Unterminated string constant. (1:189)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":""}}},{"$group":{"_id":"$Department","No_of_Instructors":{"$count":{}}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1,"No_of_Ins
+    |
+                                                                       ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Teaches.Semester","No_of_Courses":{"$count":{}}}},{"$project":{"_id":0,"Teaches.Semester":"$_id","No_of_Courses":1}}])
+[
+  {
+    No_of_Courses: 1,
+    Teaches: { Semester: [ 'Fall', 'Spring', 'Fall' ] }
+  },
+  {
+    No_of_Courses: 1,
+    Teaches: { Semester: [ 'Spring', 'Spring', 'Spring' ] }
+  },
+  { No_of_Courses: 1, Teaches: { Semester: [ 'Summer', 'Summer' ] } },
+  { No_of_Courses: 4, Teaches: { Semester: [ 'Spring' ] } },
+  { No_of_Courses: 1, Teaches: { Semester: [ 'Spring', 'Spring' ] } },
+  { No_of_Courses: 1, Teaches: { Semester: [ 'Fall' ] } },
+  { No_of_Courses: 4, Teaches: { Semester: [ '' ] } }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Teaches.Semester":{"$ne",""}}},{"$unwind":"Teaches"},{"$group":{"_id":"$Teaches.Semester","No_of_Courses":{"$count":{}}}},{"$project":{"_id":0,"Teaches.Semester":"$_id","No_of_Courses":1}}])
+Uncaught:
+SyntaxError: Unexpected token (1:63)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$match":{"Teaches.Semester":{"$ne",""}}},{"$unwind":"Teaches"},{"$group":{"_id":"$Teaches.Semester","No_of_Courses":{"$count":{}}}},{"$project":{"_id":0,"Teaches.Semester":"$_id","No_of_Courses":1}}])
+    |                                                                ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"Teaches.Semester":{"$ne":""}}},{"$unwind":"Teaches"},{"$group":{"_id":"$Teaches.Semester","No_of_Courses":{"$count":{}}}},{"$project":{"_id":0,"Teaches.Semester":"$_id","No_of_Courses":1}}])
+MongoServerError: path option to $unwind stage should be prefixed with a '$': Teaches
+University> db.FACULTY_INFO.aggregate([{"$match":{"Teaches.Semester":{"$ne":""}}},{"$unwind":"$Teaches"},{"$group":{"_id":"$Teaches.Semester","No_of_Courses":{"$count":{}}}},{"$project":{"_id":0,"Teaches.Semester":"$_id","No_of_Courses":1}}])
+[
+  { No_of_Courses: 10, Teaches: { Semester: 'Spring' } },
+  { No_of_Courses: 2, Teaches: { Semester: 'Summer' } },
+  { No_of_Courses: 3, Teaches: { Semester: 'Fall' } }
+]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0,"$gt":50000}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+[
+  { Total_Salary: 80000, Department: 'Elec. Eng.' },
+  { Total_Salary: 122000, Department: 'History' },
+  { Total_Salary: 72000, Department: 'Biology' },
+  { Total_Salary: 182000, Department: 'Physics' },
+  { Total_Salary: 170000, Department: 'Finance' },
+  { Total_Salary: 232000, Department: 'Comp. Sci.' }
+]
+University> db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0,"$gt":50000}}},{"$project":{"_id":0,"Department":
+...
+University> db.FACULTY_INFO.aggregate([{"Teaches.Teaches_Dept.Builder":{"$eq":"Watson"}},{"$unwind":"$Teaches"},{"$group":{"_id":"$Teaches.Teaches_Dept.Builder","Total_budget":{"$sum":"$Teaches.Teaches_Dept.Budget"}}},{"$project":{"_id":0,"Teaches.Teaches_Dept.Builder":"$_id","Total_budget":1}}])
+MongoServerError: Unrecognized pipeline stage name: 'Teaches.Teaches_Dept.Builder'
+University> db.FACULTY_INFO.aggregate([{"$match" :{"Teaches.Teaches_Dept.Builder": { "$eq": "Watson" } } }, { "$unwind": "$Teaches" }, { "$group": { "_id": "$Teaches.Teaches_Dept.Builder", "Total_budget": { "$sum": "$Teaches.Teaches_Dept.Budget" } } }, { "$project": { "_id": 0, "Teaches.Teaches_Dept.Builder": "$_id", "Total_budget": 1 } }])
+[
+  {
+    Total_budget: 340000,
+    Teaches: { Teaches_Dept: { Builder: 'Watson' } }
+  }
+]
+University> db.FACULTY_INFO.find({"Department":"Comp. Sci."},{"Name":1,"Salary":1,"Department":1,"_id":0}).sort({"Salary":-1}).limit(1)
+[ { Name: 'Brandt', Salary: 92000, Department: 'Comp. Sci.' } ]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":"Finance"}}},{"$group":{"_id":"$Department","Instructor_Count":{"$count":{}}}},{"$match":{"Instructor_Count":{"$gte",2}}},{"$project":{"_id":0,"Department":"$_id","Instructor_Count":1}}])
+Uncaught:
+SyntaxError: Unexpected token (1:174)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":"Finance"}}},{"$group":{"_id":"$Department","Instructor_Count":{"$count":{}}}},{"$match":{"Instructor_Count":{"$gte",2}}},{"$project":{"_id":0,"Department":"$_id","Instructor_Count":1}}])
+    |
+                                               ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":"Finance"}}},{"$group":{"_id":"$Department","Instructor_Count":{"$count":{}}}},{"$match":{"Instructor_Count":{"$gte":2}}},{"$project":{"_id":0,"Department":"$_id","Instructor_Count":1}}])
+[
+  { Instructor_Count: 2, Department: 'Physics' },
+  { Instructor_Count: 3, Department: 'Comp. Sci.' },
+  { Instructor_Count: 2, Department: 'History' }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":"Finance"}}},{"$group":{"_id":"$Department","Instructor_Count":{"$count":{}}}},{"$match":{"Instructor_Count":{"$gte":2}}},{"$project":{"_id":0,"Department":"$_id","Instructor_Count":1}}]).sort({"Instructor_Count":-1})
+[
+  { Instructor_Count: 3, Department: 'Comp. Sci.' },
+  { Instructor_Count: 2, Department: 'Physics' },
+  { Instructor_Count: 2, Department: 'History' }
+]
+University> db.createCollection("Dual_own")
+{ ok: 1 }
+University> db.Dual_own.insertOne({"Name":"tanmoy"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514e70c451b26d20c28e23a")
+}
+University> db.Dual_own.insertOne({"Name":"shampa"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514e713451b26d20c28e23b")
+}
+University> db.Dual_own.insertOne({"Name":"debdulal"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514e71c451b26d20c28e23c")
+}
+University> db.Dual_own.insertOne({"Name":"ankit"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514e722451b26d20c28e23d")
+}
+University> db.Dual_own.insertOne({"Name":"gita"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6514e72a451b26d20c28e23e")
+}
+University> db.Dual_own.aggregate([{"$project":{"Name":{"$concat":[{"$toUpper":{"$substrCP":["$Name",0,1]}},{"$substrCP":["$Name",1,{"$subtract":[{"$strLenCP":"$Name"},1]}]}]}}}])
+[
+  { _id: ObjectId("6514e70c451b26d20c28e23a"), Name: 'Tanmoy' },
+  { _id: ObjectId("6514e713451b26d20c28e23b"), Name: 'Shampa' },
+  { _id: ObjectId("6514e71c451b26d20c28e23c"), Name: 'Debdulal' },
+  { _id: ObjectId("6514e722451b26d20c28e23d"), Name: 'Ankit' },
+  { _id: ObjectId("6514e72a451b26d20c28e23e"), Name: 'Gita' }
+]
+University> db.Dual_own.aggregate([{"$project":{"Name":{"$concat":[{"$toUpper":{"$substrCP":["$Name",0,1]}},{"$substrCP":["$Name",1,{"$subtract":[{"$strLenCP":"$Name"},1]}]}]}},"_id":0}])
+MongoServerError: A pipeline stage specification object must contain exactly one field.
+University> db.Dual_own.aggregate([{"$project":{"Name":{"$concat":[{"$toUpper":{"$substrCP":["$Name",0,1]}},{"$substrCP":["$Name",1,{"$subtract":[{"$strLenCP":"$Name"},1]}]}]}}},{"$project":{"_id":0}}])
+[
+  { Name: 'Tanmoy' },
+  { Name: 'Shampa' },
+  { Name: 'Debdulal' },
+  { Name: 'Ankit' },
+  { Name: 'Gita' }
+]
+University> db.Dual_own.aggregate([{"$project":{"Name_":"TanmoyDas","NameSubstring":{"$substr":["$Name_",2,5]}}}])
+[
+  {
+    _id: ObjectId("6514e70c451b26d20c28e23a"),
+    Name_: 'TanmoyDas',
+    NameSubstring: ''
+  },
+  {
+    _id: ObjectId("6514e713451b26d20c28e23b"),
+    Name_: 'TanmoyDas',
+    NameSubstring: ''
+  },
+  {
+    _id: ObjectId("6514e71c451b26d20c28e23c"),
+    Name_: 'TanmoyDas',
+    NameSubstring: ''
+  },
+  {
+    _id: ObjectId("6514e722451b26d20c28e23d"),
+    Name_: 'TanmoyDas',
+    NameSubstring: ''
+  },
+  {
+    _id: ObjectId("6514e72a451b26d20c28e23e"),
+    Name_: 'TanmoyDas',
+    NameSubstring: ''
+  }
+]
+University> db.Dual_own.aggregate([{"$project":{"Name_":"TanmoyDas","_id":0,"NameSubstring":{"$substr":["TanmoyDas",2,5]}}}])
+[
+  { Name_: 'TanmoyDas', NameSubstring: 'nmoyD' },
+  { Name_: 'TanmoyDas', NameSubstring: 'nmoyD' },
+  { Name_: 'TanmoyDas', NameSubstring: 'nmoyD' },
+  { Name_: 'TanmoyDas', NameSubstring: 'nmoyD' },
+  { Name_: 'TanmoyDas', NameSubstring: 'nmoyD' }
+]
+University> db.Dual_own.aggregate([{"$project":{"Name_":"TanmoyDas","_id":0,"NameSubstring":{"$substr":["TanmoyDas",1,5]}}}])
+[
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoy' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoy' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoy' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoy' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoy' }
+]
+University> db.Dual_own.aggregate([{"$project":{"Name_":"TanmoyDas","_id":0,"NameSubstring":{"$substr":["TanmoyDas",1,6]}}}])
+[
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoyD' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoyD' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoyD' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoyD' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoyD' }
+]
+University> db.Dual_own.aggregate([{"$project":{"Name_":"TanmoyDas","_id":0,"NameSubstring":{"$substr":["TanmoyDas",1,5]}}}])
+[
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoy' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoy' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoy' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoy' },
+  { Name_: 'TanmoyDas', NameSubstring: 'anmoy' }
+]
+University> db.Dual.aggregate([{"$project":{"Name_":"TanmoyDas","_id":0,"NameSubstring":{"$substr":["TanmoyDas",1,5]}}}])
+
+University> db.createCollection("Dual")
+{ ok: 1 }
+University> db.Dual.aggregate([{"$project":{"Name_":"TanmoyDas","_id":0,"NameSubstring":{"$substr":["TanmoyDas",1,5]}}}])
+
+University> db.Dual_own.find({})
+[
+  { _id: ObjectId("6514e70c451b26d20c28e23a"), Name: 'tanmoy' },
+  { _id: ObjectId("6514e713451b26d20c28e23b"), Name: 'shampa' },
+  { _id: ObjectId("6514e71c451b26d20c28e23c"), Name: 'debdulal' },
+  { _id: ObjectId("6514e722451b26d20c28e23d"), Name: 'ankit' },
+  { _id: ObjectId("6514e72a451b26d20c28e23e"), Name: 'gita' }
+]
+University> db.Dual_own.aggregate([{"$match":{"Name":"tanmoy"}},{"$project":{"Name":1,"_id":0,"NameSubstring":{"$substr":["$Name",1,5]}}}])
+[ { Name: 'tanmoy', NameSubstring: 'anmoy' } ]
+University> db.createCollection("Uinversity_Name")
+{ ok: 1 }
+University> db.University_Name.insertOne({"UniName":"Siksha 'O' Anusandhan University"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6515044b359d8f93afcb8d19")
+}
+University> db.University_Name.aggregate([{"$project":{"UniName":1,"UniLength":{"$strLenCP":"$UniName"}}}])
+[
+  {
+    _id: ObjectId("6515044b359d8f93afcb8d19"),
+    UniName: "Siksha 'O' Anusandhan University",
+    UniLength: 32
+  }
+]
+University> db.University_Name.aggregate([{"$project":{"UniName":1,"UniLength":{"$strLenCP":"$UniName"},"_id":0}}])
+[ { UniName: "Siksha 'O' Anusandhan University", UniLength: 32 } ]
+University> db.FACULTY_INFO.aggregate([{"$project":{"Name":1,"_id":0,"Initcap_Name":{"$concat":[{"$toUpper":{"$substrCP":["$Name",0,1]}},{"$substrCP":["$Name",1,"$subtract":[{"$strLenCP":"$Name"},1]]}]}}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:160)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$project":{"Name":1,"_id":0,"Initcap_Name":{"$concat":[{"$toUpper":{"$substrCP":["$Name",0,1]}},{"$substrCP":["$Name",1,"$subtract":[{"$strLenCP":"$Name"},1]]}]}}}])
+    |
+                                 ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$project":{"Name":1,"_id":0,"Initcap_Name":{"$concat":[{"$toUpper":{"$substrCP":["$Name",0,1]}},{"$substrCP":["$Name",1,{"$subtract":[{"$strLenCP":"$Name"},1]}]}]}}}])
+MongoServerError: PlanExecutor error during aggregation :: caused by :: $substrCP: length must be a nonnegative integer.
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Initcap_Name":{"$concat":[{"$toUpper":{"$substrCP":["$Name",0,1]}},{"$substrCP":["$Name",1,{"$subtract":[{"$strLenCP":"$Name"},1]}]}]}}}])
+[
+  { Name: 'Srinivasan', Initcap_Name: 'Srinivasan' },
+  { Name: 'Wu', Initcap_Name: 'Wu' },
+  { Name: 'Mozart', Initcap_Name: 'Mozart' },
+  { Name: 'Einstein', Initcap_Name: 'Einstein' },
+  { Name: 'El Said', Initcap_Name: 'El Said' },
+  { Name: 'Gold', Initcap_Name: 'Gold' },
+  { Name: 'Katz', Initcap_Name: 'Katz' },
+  { Name: 'Califieri', Initcap_Name: 'Califieri' },
+  { Name: 'Singh', Initcap_Name: 'Singh' },
+  { Name: 'Crick', Initcap_Name: 'Crick' },
+  { Name: 'Brandt', Initcap_Name: 'Brandt' },
+  { Name: 'Kim', Initcap_Name: 'Kim' }
+]
+University> db.FACULTY_INFO.aggregate([{"$project":{"Department":1,"Abbr":{"$substr":["$Department",0,3]}}}])
+[
+  {
+    _id: ObjectId("65143d5a15f0b19281888df0"),
+    Department: 'Comp. Sci.',
+    Abbr: 'Com'
+  },
+  {
+    _id: ObjectId("65143f1b15f0b19281888df1"),
+    Department: 'Finance',
+    Abbr: 'Fin'
+  },
+  {
+    _id: ObjectId("65143fa315f0b19281888df2"),
+    Department: 'Music',
+    Abbr: 'Mus'
+  },
+  {
+    _id: ObjectId("651440df15f0b19281888df3"),
+    Department: 'Physics',
+    Abbr: 'Phy'
+  },
+  {
+    _id: ObjectId("6514424115f0b19281888df4"),
+    Department: 'History',
+    Abbr: 'His'
+  },
+  {
+    _id: ObjectId("651442ba15f0b19281888df5"),
+    Department: 'Physics',
+    Abbr: 'Phy'
+  },
+  {
+    _id: ObjectId("651443a615f0b19281888df6"),
+    Department: 'Comp. Sci.',
+    Abbr: 'Com'
+  },
+  {
+    _id: ObjectId("6514441615f0b19281888df7"),
+    Department: 'History',
+    Abbr: 'His'
+  },
+  {
+    _id: ObjectId("6514445b15f0b19281888df8"),
+    Department: 'Finance',
+    Abbr: 'Fin'
+  },
+  {
+    _id: ObjectId("6514453915f0b19281888df9"),
+    Department: 'Biology',
+    Abbr: 'Bio'
+  },
+  {
+    _id: ObjectId("6514461a15f0b19281888dfa"),
+    Department: 'Comp. Sci.',
+    Abbr: 'Com'
+  },
+  {
+    _id: ObjectId("6514469d15f0b19281888dfb"),
+    Department: 'Elec. Eng.',
+    Abbr: 'Ele'
+  },
+  {
+    _id: ObjectId("651446f915f0b19281888dfc"),
+    Department: '',
+    Abbr: ''
+  }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":""}}},{"$project":{"Department":1,"_id":0,"Abbr":{"$substr":["$Department",0,3]}}}])
+[
+  { Department: 'Comp. Sci.', Abbr: 'Com' },
+  { Department: 'Finance', Abbr: 'Fin' },
+  { Department: 'Music', Abbr: 'Mus' },
+  { Department: 'Physics', Abbr: 'Phy' },
+  { Department: 'History', Abbr: 'His' },
+  { Department: 'Physics', Abbr: 'Phy' },
+  { Department: 'Comp. Sci.', Abbr: 'Com' },
+  { Department: 'History', Abbr: 'His' },
+  { Department: 'Finance', Abbr: 'Fin' },
+  { Department: 'Biology', Abbr: 'Bio' },
+  { Department: 'Comp. Sci.', Abbr: 'Com' },
+  { Department: 'Elec. Eng.', Abbr: 'Ele' }
+]
+University> db.FACULTY_INFO.aggregate([{"$project":{"Name":1,"_id":0,"Month_of_Joining_number":{"$month":"$Date_of_Join"}}}])
+[
+  { Name: 'Srinivasan', Month_of_Joining_number: 10 },
+  { Name: 'Wu', Month_of_Joining_number: 8 },
+  { Name: 'Mozart', Month_of_Joining_number: 1 },
+  { Name: 'Einstein', Month_of_Joining_number: 5 },
+  { Name: 'El Said', Month_of_Joining_number: 4 },
+  { Name: 'Gold', Month_of_Joining_number: 9 },
+  { Name: 'Katz', Month_of_Joining_number: 3 },
+  { Name: 'Califieri', Month_of_Joining_number: 11 },
+  { Name: 'Singh', Month_of_Joining_number: 12 },
+  { Name: 'Crick', Month_of_Joining_number: 6 },
+  { Name: 'Brandt', Month_of_Joining_number: 4 },
+  { Name: 'Kim', Month_of_Joining_number: 9 },
+  { Name: '', Month_of_Joining_number: null }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}}{"$project":{"Name":1,"_id":0,"Month_of_Joining_number":{"$month":"$Date_of_Join"}}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:57)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}}{"$project":{"Name":1,"_id":0,"Month_of_Joining_number":{"$month":"$Date_of_Join"}}}])
+    |                                                          ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Month_of_Joining_number":{"$month":"$Date_of_Join"}}}])
+[
+  { Name: 'Srinivasan', Month_of_Joining_number: 10 },
+  { Name: 'Wu', Month_of_Joining_number: 8 },
+  { Name: 'Mozart', Month_of_Joining_number: 1 },
+  { Name: 'Einstein', Month_of_Joining_number: 5 },
+  { Name: 'El Said', Month_of_Joining_number: 4 },
+  { Name: 'Gold', Month_of_Joining_number: 9 },
+  { Name: 'Katz', Month_of_Joining_number: 3 },
+  { Name: 'Califieri', Month_of_Joining_number: 11 },
+  { Name: 'Singh', Month_of_Joining_number: 12 },
+  { Name: 'Crick', Month_of_Joining_number: 6 },
+  { Name: 'Brandt', Month_of_Joining_number: 4 },
+  { Name: 'Kim', Month_of_Joining_number: 9 }
+]
+University> db.FACULTY_INFO.aggregate(["$addFields":{"Month_of_Joining":{"$let":{"vars":{"Months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"in":{"$arrayElementAt":["$$Months_in_String","$month"]}}}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:39)
+
+> 1 | db.FACULTY_INFO.aggregate(["$addFields":{"Month_of_Joining":{"$let":{"vars":{"Months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"in":{"$arrayElementAt":["$$Months_in_String","$month"]}}}}])
+    |                                        ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate(["$addFields":{"Month_of_Joining":{"$let":{"vars":{"Months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"in":{"$arrayElementAt":["$$Months_in_String","$month"]}}}}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:39)
+
+> 1 | db.FACULTY_INFO.aggregate(["$addFields":{"Month_of_Joining":{"$let":{"vars":{"Months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"in":{"$arrayElementAt":["$$Months_in_String","$month"]}}}}}])
+    |                                        ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$addFields":{"Month_of_Joining":{"$let":{"vars":{"Months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"in":{"$arrayElementAt":["$$Months_in_String","$month"]}}}}}])
+MongoServerError: Invalid $addFields :: caused by :: 'Months_in_String' starts with an invalid character for a user variable name
+University> db.FACULTY_INFO.aggregate([{"$addFields":{"Month_of_Joining":{"$let":{"vars":{"Months_in_String":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"in":{"$arrayElementAt":["$$Months_in_String","$month"]}}}}}])
+MongoServerError: Invalid $addFields :: caused by :: 'Months_in_String' starts with an invalid character for a user variable name
+University> db.FACULTY_INFO.aggregate([{"$project":{"Month_of_Joining":{"$let":{"vars":{"Months_in_String":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"in":{"$arrayElementAt":["$$Months_in_String","$month"]}}}}}])
+MongoServerError: Invalid $project :: caused by :: 'Months_in_String' starts with an invalid character for a user variable name
+University> db.FACULTY_INFO.aggregate([{"$project":{"Month_of_Joining":{"$let":{"vars":{"Months_in_String":["null","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"in":{"$arrayElementAt":["$$Months_in_String","$month"]}}}}}])
+MongoServerError: Invalid $project :: caused by :: 'Months_in_String' starts with an invalid character for a user variable name
+University> db.FACULTY_INFO.aggregate([{"$project":{"Month_of_Joining":{"$let":{vars:{"Months_in_String":["null","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},in:{"$arrayElementAt":["$$Months_in_String","$month"]}}}}}])
+MongoServerError: Invalid $project :: caused by :: 'Months_in_String' starts with an invalid character for a user variable name
+University> db.FACULTY_INFO.aggregate([{"$addFields":{"Month_of_Joining":{"$let":{vars:{"Months_in_String":["null","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},in:{"$arrayElementAt":["$$Months_in_String","$month"]}}}}}])
+MongoServerError: Invalid $addFields :: caused by :: 'Months_in_String' starts with an invalid character for a user variable name
+University> db.FACULTY_INFO.aggregate([{"$addFields":{"Month_of_Joining":{"$let":{vars:{"Months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},in:{"$arrayElementAt":["$$Months_in_String","$month"]}}}}}])
+MongoServerError: Invalid $addFields :: caused by :: 'Months_in_String' starts with an invalid character for a user variable name
+University> db.FACULTY_INFO.aggregate([{"$addFields":{"Month_of_Joining":{"$let":{vars:{"Months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},in:{"$arrayEleme
+Uncaught:
+SyntaxError: Unterminated string constant. (1:175)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$addFields":{"Month_of_Joining":{"$let":{vars:{"Months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},in:{"$arrayEleme
+    |
+                                     ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$addFields":{"Month_of_Joining":{"$let":{vars:{"months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},in:{"$arrayElementAt":["$$months_in_String","$month"]}}}}}])
+MongoServerError: Invalid $addFields :: caused by :: Unrecognized expression '$arrayElementAt'
+University> db.FACULTY_INFO.aggregate([{"$addFields":{"Month_of_Joining":{"$let":{vars:{"months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},in:{"$arrayElemAt":["$$months_in_String","$month"]}}}}}])
+[
+  {
+    _id: ObjectId("65143d5a15f0b19281888df0"),
+    ID: 10101,
+    Name: 'Srinivasan',
+    Salary: 65000,
+    Teaches: [
+      {
+        Sub_code: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-315',
+        Title: 'Robotics',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-347',
+        Title: 'Database System Concepts',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1980-10-12T00:00:00.000Z"),
+    Department: 'Comp. Sci.',
+    Annual_Salary: 780000,
+    Gross_Salary: 146250,
+    Net_Salary: 126750,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("65143f1b15f0b19281888df1"),
+    ID: 12121,
+    Name: 'Wu',
+    Salary: 90000,
+    Teaches: [
+      {
+        Sub_code: 'FIN-201',
+        Title: 'Investment Banking',
+        Department_name: 'Finance',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Painter', Budget: 120000 }
+      }
+    ],
+    Date_of_Join: ISODate("1977-08-11T00:00:00.000Z"),
+    Department: 'Finance',
+    Annual_Salary: 1080000,
+    Gross_Salary: 202500,
+    Net_Salary: 175500,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("65143fa315f0b19281888df2"),
+    ID: 15151,
+    Name: 'Mozart',
+    Salary: 40000,
+    Teaches: [
+      {
+        Sub_code: 'MU-199',
+        Title: 'Music Video Production',
+        Department_name: 'Music',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Packard', Budget: 80000 }
+      }
+    ],
+    Date_of_Join: ISODate("1965-01-23T00:00:00.000Z"),
+    Department: 'Music',
+    Annual_Salary: 480000,
+    Gross_Salary: 90000,
+    Net_Salary: 78000,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("651440df15f0b19281888df3"),
+    ID: 22222,
+    Name: 'Einstein',
+    Salary: 95000,
+    Teaches: [
+      {
+        Sub_code: 'PHY-101',
+        Title: 'Physical Principles',
+        Department_name: 'Physics',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Watson', Budget: 70000 }
+      }
+    ],
+    Date_of_Join: ISODate("1998-05-02T00:00:00.000Z"),
+    Department: 'Physics',
+    Annual_Salary: 1140000,
+    Gross_Salary: 213750,
+    Net_Salary: 185250,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("6514424115f0b19281888df4"),
+    ID: 32343,
+    Name: 'El Said',
+    Salary: 60000,
+    Teaches: [
+      {
+        Sub_code: 'HIS-351',
+        Title: 'World History',
+        Department_name: 'History',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Painter', Budget: 50000 }
+      }
+    ],
+    Date_of_Join: ISODate("1987-04-19T00:00:00.000Z"),
+    Department: 'History',
+    Annual_Salary: 720000,
+    Gross_Salary: 135000,
+    Net_Salary: 117000,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("651442ba15f0b19281888df5"),
+    ID: 33456,
+    Name: 'Gold',
+    Salary: 87000,
+    Teaches: [
+      {
+        Sub_code: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Builder: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1992-09-21T00:00:00.000Z"),
+    Department: 'Physics',
+    Annual_Salary: 1044000,
+    Gross_Salary: 195750,
+    Net_Salary: 169650,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("651443a615f0b19281888df6"),
+    ID: 45565,
+    Name: 'Katz',
+    Salary: 75000,
+    Teaches: [
+      {
+        Sub_code: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1954-03-16T00:00:00.000Z"),
+    Department: 'Comp. Sci.',
+    Annual_Salary: 900000,
+    Gross_Salary: 168750,
+    Net_Salary: 146250,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("6514441615f0b19281888df7"),
+    ID: 58583,
+    Name: 'Califieri',
+    Salary: 62000,
+    Teaches: [
+      {
+        Sub_code: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Builder: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1970-11-29T00:00:00.000Z"),
+    Department: 'History',
+    Annual_Salary: 744000,
+    Gross_Salary: 139500,
+    Net_Salary: 120900,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("6514445b15f0b19281888df8"),
+    ID: 76543,
+    Name: 'Singh',
+    Salary: 80000,
+    Teaches: [
+      {
+        Sub_code: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Builder: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1983-12-26T00:00:00.000Z"),
+    Department: 'Finance',
+    Annual_Salary: 960000,
+    Gross_Salary: 180000,
+    Net_Salary: 156000,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("6514453915f0b19281888df9"),
+    ID: 76766,
+    Name: 'Crick',
+    Salary: 72000,
+    Teaches: [
+      {
+        Sub_code: 'BIO-101',
+        Title: 'Intro. to Biology',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Watson', Budget: 90000 }
+      },
+      {
+        Sub_code: 'BIO-301',
+        Title: 'Genetics',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: 'BIO-101',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Watson', Budget: 90000 }
+      }
+    ],
+    Date_of_Join: ISODate("1961-06-07T00:00:00.000Z"),
+    Department: 'Biology',
+    Annual_Salary: 864000,
+    Gross_Salary: 162000,
+    Net_Salary: 140400,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("6514461a15f0b19281888dfa"),
+    ID: 83821,
+    Name: 'Brandt',
+    Salary: 92000,
+    Teaches: [
+      {
+        Sub_code: 'CS-190',
+        Title: 'Game Theory',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-190',
+        Title: 'Game Theory',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: 'CS-101',
+        Sec_id: 2,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-319',
+        Title: 'Game Theory',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 2,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1969-04-12T00:00:00.000Z"),
+    Department: 'Comp. Sci.',
+    Annual_Salary: 1104000,
+    Gross_Salary: 207000,
+    Net_Salary: 179400,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("6514469d15f0b19281888dfb"),
+    ID: 98345,
+    Name: 'Kim',
+    Salary: 80000,
+    Teaches: [
+      {
+        Sub_code: 'EE-181',
+        Title: 'Intro. to Digital Systems',
+        Department_name: 'Elec. Eng.',
+        Credits: 3,
+        Prereq_id: 'PHY-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 85000 }
+      }
+    ],
+    Date_of_Join: ISODate("1973-09-21T00:00:00.000Z"),
+    Department: 'Elec. Eng.',
+    Annual_Salary: 960000,
+    Gross_Salary: 180000,
+    Net_Salary: 156000,
+    Month_of_Joining: null
+  },
+  {
+    _id: ObjectId("651446f915f0b19281888dfc"),
+    ID: null,
+    Name: '',
+    Salary: null,
+    Teaches: [
+      {
+        Sub_code: 'BIO-399',
+        Title: 'Computational Biology',
+        Department_name: 'Biology',
+        Credits: 3,
+        Prereq_id: 'BIO-101',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Builder: 'Watson', Budget: 90000 }
+      }
+    ],
+    Date_of_Join: null,
+    Department: '',
+    Annual_Salary: null,
+    Gross_Salary: null,
+    Net_Salary: null,
+    Month_of_Joining: null
+  }
+]
+University> db.FACULTY_INFO.aggregate([{"$addFields":{"Month_of_Joining":{"$let":{vars:{"months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},in:{"$arrayElemAt":["$$months_in_String","$month"]}
+...
+University> db.FACULTY_INFO.aggregate([{"$project":{"Month_of_Joining":{"$let":{vars:{"months_in_String":[,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},in:{"$arrayElementAt":["$$months_in_String","$month"]}}}}}])
+MongoServerError: Invalid $project :: caused by :: Unrecognized expression '$arrayElementAt'
+University> db.FACULTY_INFO.aggregate([{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }, in: { "$arrayElemAt": ["$$months_in_String", "$month"] } } } } }])
+[
+  { Name: 'Srinivasan', Month_of_Joining: null },
+  { Name: 'Wu', Month_of_Joining: null },
+  { Name: 'Mozart', Month_of_Joining: null },
+  { Name: 'Einstein', Month_of_Joining: null },
+  { Name: 'El Said', Month_of_Joining: null },
+  { Name: 'Gold', Month_of_Joining: null },
+  { Name: 'Katz', Month_of_Joining: null },
+  { Name: 'Califieri', Month_of_Joining: null },
+  { Name: 'Singh', Month_of_Joining: null },
+  { Name: 'Crick', Month_of_Joining: null },
+  { Name: 'Brandt', Month_of_Joining: null },
+  { Name: 'Kim', Month_of_Joining: null },
+  { Name: '', Month_of_Joining: null }
+]
+University> db.FACULTY_INFO.aggregate([{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }, in: { "$arrayElemAt": ["$$months_in_String", {"$month":"$Date_of_Join"] } } } } }])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:281)
+
+> 1 | db.FACULTY_INFO.aggregate([{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }, in: { "$arrayElemAt": ["$$months_in_String", {"$month":"$Date_of_Join"] } } } } }])
+    |
+                                                                                                                                               ^  2 |
+
+University> db.FACULTY_INFO.aggregate([{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }, in: { "$arrayElemAt": ["$$months_in_String", {"$month":"$Date_of_Join"}] } } } } }])
+[
+  { Name: 'Srinivasan', Month_of_Joining: 'Oct' },
+  { Name: 'Wu', Month_of_Joining: 'Aug' },
+  { Name: 'Mozart', Month_of_Joining: 'Jan' },
+  { Name: 'Einstein', Month_of_Joining: 'May' },
+  { Name: 'El Said', Month_of_Joining: 'Apr' },
+  { Name: 'Gold', Month_of_Joining: 'Sep' },
+  { Name: 'Katz', Month_of_Joining: 'Mar' },
+  { Name: 'Califieri', Month_of_Joining: 'Nov' },
+  { Name: 'Singh', Month_of_Joining: 'Dec' },
+  { Name: 'Crick', Month_of_Joining: 'Jun' },
+  { Name: 'Brandt', Month_of_Joining: 'Apr' },
+  { Name: 'Kim', Month_of_Joining: 'Sep' },
+  { Name: '', Month_of_Joining: null }
+]
+University> db.FACULTY_INFO.aggregate([{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }\rrayElemAt": ["$$months_in_String", {"$month":"$Date_of_Join"}] } } } } }])
+Uncaught:
+SyntaxError: Expecting Unicode escape sequence \uXXXX. (1:210)
+
+> 1 | db.FACULTY_INFO.aggregate([{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }\rrayElemAt": ["$$months_in_String", {"$month":"$Date_of_Join"}] } } } } }])
+    |
+                                                                        ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }\rrayElemAt": ["$$months_in_String", {"$month":"$Date_of_Join"}] } } } }
+Uncaught:
+SyntaxError: Expecting Unicode escape sequence \uXXXX. (1:210)
+
+> 1 | db.FACULTY_INFO.aggregate([{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }\rrayElemAt": ["$$months_in_String", {"$month":"$Date_of_Join"}] } } } }
+    |
+                                                                        ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }, in: { "$arrayElemAt": ["$$months_in_String", {"$month":"$Date_of_Join"}] } } } }
+...
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }, in: { "$arrayElemAt": ["$$months_in_String", {"$month":"$Date_of_Join"}] } } } } }])
+[
+  { Name: 'Srinivasan', Month_of_Joining: 'Oct' },
+  { Name: 'Wu', Month_of_Joining: 'Aug' },
+  { Name: 'Mozart', Month_of_Joining: 'Jan' },
+  { Name: 'Einstein', Month_of_Joining: 'May' },
+  { Name: 'El Said', Month_of_Joining: 'Apr' },
+  { Name: 'Gold', Month_of_Joining: 'Sep' },
+  { Name: 'Katz', Month_of_Joining: 'Mar' },
+  { Name: 'Califieri', Month_of_Joining: 'Nov' },
+  { Name: 'Singh', Month_of_Joining: 'Dec' },
+  { Name: 'Crick', Month_of_Joining: 'Jun' },
+  { Name: 'Brandt', Month_of_Joining: 'Apr' },
+  { Name: 'Kim', Month_of_Joining: 'Sep' }
+]
+University> db.FACULTY_INFO.find()
+[
+  {
+    _id: ObjectId("65143d5a15f0b19281888df0"),
+    ID: 10101,
+    Name: 'Srinivasan',
+    Salary: 65000,
+    Teaches: [
+      {
+        Sub_code: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-315',
+        Title: 'Robotics',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-347',
+        Title: 'Database System Concepts',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1980-10-12T00:00:00.000Z"),
+    Department: 'Comp. Sci.',
+    Annual_Salary: 780000,
+    Gross_Salary: 146250,
+    Net_Salary: 126750
+  },
+  {
+    _id: ObjectId("65143f1b15f0b19281888df1"),
+    ID: 12121,
+    Name: 'Wu',
+    Salary: 90000,
+    Teaches: [
+      {
+        Sub_code: 'FIN-201',
+        Title: 'Investment Banking',
+        Department_name: 'Finance',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Painter', Budget: 120000 }
+      }
+    ],
+    Date_of_Join: ISODate("1977-08-11T00:00:00.000Z"),
+    Department: 'Finance',
+    Annual_Salary: 1080000,
+    Gross_Salary: 202500,
+    Net_Salary: 175500
+  },
+  {
+    _id: ObjectId("65143fa315f0b19281888df2"),
+    ID: 15151,
+    Name: 'Mozart',
+    Salary: 40000,
+    Teaches: [
+      {
+        Sub_code: 'MU-199',
+        Title: 'Music Video Production',
+        Department_name: 'Music',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Packard', Budget: 80000 }
+      }
+    ],
+    Date_of_Join: ISODate("1965-01-23T00:00:00.000Z"),
+    Department: 'Music',
+    Annual_Salary: 480000,
+    Gross_Salary: 90000,
+    Net_Salary: 78000
+  },
+  {
+    _id: ObjectId("651440df15f0b19281888df3"),
+    ID: 22222,
+    Name: 'Einstein',
+    Salary: 95000,
+    Teaches: [
+      {
+        Sub_code: 'PHY-101',
+        Title: 'Physical Principles',
+        Department_name: 'Physics',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Fall',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Watson', Budget: 70000 }
+      }
+    ],
+    Date_of_Join: ISODate("1998-05-02T00:00:00.000Z"),
+    Department: 'Physics',
+    Annual_Salary: 1140000,
+    Gross_Salary: 213750,
+    Net_Salary: 185250
+  },
+  {
+    _id: ObjectId("6514424115f0b19281888df4"),
+    ID: 32343,
+    Name: 'El Said',
+    Salary: 60000,
+    Teaches: [
+      {
+        Sub_code: 'HIS-351',
+        Title: 'World History',
+        Department_name: 'History',
+        Credits: 3,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Painter', Budget: 50000 }
+      }
+    ],
+    Date_of_Join: ISODate("1987-04-19T00:00:00.000Z"),
+    Department: 'History',
+    Annual_Salary: 720000,
+    Gross_Salary: 135000,
+    Net_Salary: 117000
+  },
+  {
+    _id: ObjectId("651442ba15f0b19281888df5"),
+    ID: 33456,
+    Name: 'Gold',
+    Salary: 87000,
+    Teaches: [
+      {
+        Sub_code: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Builder: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1992-09-21T00:00:00.000Z"),
+    Department: 'Physics',
+    Annual_Salary: 1044000,
+    Gross_Salary: 195750,
+    Net_Salary: 169650
+  },
+  {
+    _id: ObjectId("651443a615f0b19281888df6"),
+    ID: 45565,
+    Name: 'Katz',
+    Salary: 75000,
+    Teaches: [
+      {
+        Sub_code: 'CS-101',
+        Title: 'Intro. to Computer Science',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-319',
+        Title: 'Image Processing',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1954-03-16T00:00:00.000Z"),
+    Department: 'Comp. Sci.',
+    Annual_Salary: 900000,
+    Gross_Salary: 168750,
+    Net_Salary: 146250
+  },
+  {
+    _id: ObjectId("6514441615f0b19281888df7"),
+    ID: 58583,
+    Name: 'Califieri',
+    Salary: 62000,
+    Teaches: [
+      {
+        Sub_code: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Builder: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1970-11-29T00:00:00.000Z"),
+    Department: 'History',
+    Annual_Salary: 744000,
+    Gross_Salary: 139500,
+    Net_Salary: 120900
+  },
+  {
+    _id: ObjectId("6514445b15f0b19281888df8"),
+    ID: 76543,
+    Name: 'Singh',
+    Salary: 80000,
+    Teaches: [
+      {
+        Sub_code: '',
+        Title: '',
+        Department_name: '',
+        Credits: null,
+        Prereq_id: '',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Builder: '', Budget: null }
+      }
+    ],
+    Date_of_Join: ISODate("1983-12-26T00:00:00.000Z"),
+    Department: 'Finance',
+    Annual_Salary: 960000,
+    Gross_Salary: 180000,
+    Net_Salary: 156000
+  },
+  {
+    _id: ObjectId("6514453915f0b19281888df9"),
+    ID: 76766,
+    Name: 'Crick',
+    Salary: 72000,
+    Teaches: [
+      {
+        Sub_code: 'BIO-101',
+        Title: 'Intro. to Biology',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: '',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Watson', Budget: 90000 }
+      },
+      {
+        Sub_code: 'BIO-301',
+        Title: 'Genetics',
+        Department_name: 'Biology',
+        Credits: 4,
+        Prereq_id: 'BIO-101',
+        Sec_id: 1,
+        Semester: 'Summer',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Watson', Budget: 90000 }
+      }
+    ],
+    Date_of_Join: ISODate("1961-06-07T00:00:00.000Z"),
+    Department: 'Biology',
+    Annual_Salary: 864000,
+    Gross_Salary: 162000,
+    Net_Salary: 140400
+  },
+  {
+    _id: ObjectId("6514461a15f0b19281888dfa"),
+    ID: 83821,
+    Name: 'Brandt',
+    Salary: 92000,
+    Teaches: [
+      {
+        Sub_code: 'CS-190',
+        Title: 'Game Theory',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: 'CS-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-190',
+        Title: 'Game Theory',
+        Department_name: 'Comp. Sci.',
+        Credits: 4,
+        Prereq_id: 'CS-101',
+        Sec_id: 2,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      },
+      {
+        Sub_code: 'CS-319',
+        Title: 'Game Theory',
+        Department_name: 'Comp. Sci.',
+        Credits: 3,
+        Prereq_id: 'CS-101',
+        Sec_id: 2,
+        Semester: 'Spring',
+        Year: 2010,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 100000 }
+      }
+    ],
+    Date_of_Join: ISODate("1969-04-12T00:00:00.000Z"),
+    Department: 'Comp. Sci.',
+    Annual_Salary: 1104000,
+    Gross_Salary: 207000,
+    Net_Salary: 179400
+  },
+  {
+    _id: ObjectId("6514469d15f0b19281888dfb"),
+    ID: 98345,
+    Name: 'Kim',
+    Salary: 80000,
+    Teaches: [
+      {
+        Sub_code: 'EE-181',
+        Title: 'Intro. to Digital Systems',
+        Department_name: 'Elec. Eng.',
+        Credits: 3,
+        Prereq_id: 'PHY-101',
+        Sec_id: 1,
+        Semester: 'Spring',
+        Year: 2009,
+        Teaches_Dept: { Builder: 'Taylor', Budget: 85000 }
+      }
+    ],
+    Date_of_Join: ISODate("1973-09-21T00:00:00.000Z"),
+    Department: 'Elec. Eng.',
+    Annual_Salary: 960000,
+    Gross_Salary: 180000,
+    Net_Salary: 156000
+  },
+  {
+    _id: ObjectId("651446f915f0b19281888dfc"),
+    ID: null,
+    Name: '',
+    Salary: null,
+    Teaches: [
+      {
+        Sub_code: 'BIO-399',
+        Title: 'Computational Biology',
+        Department_name: 'Biology',
+        Credits: 3,
+        Prereq_id: 'BIO-101',
+        Sec_id: null,
+        Semester: '',
+        Year: null,
+        Teaches_Dept: { Builder: 'Watson', Budget: 90000 }
+      }
+    ],
+    Date_of_Join: null,
+    Department: '',
+    Annual_Salary: null,
+    Gross_Salary: null,
+    Net_Salary: null
+  }
+]
+University> db.FACULTY_INFO.aggregate([{"$project":{"New_Date":{"$dateToString":{"format":"%d/%m/%Y","date":"$Date_of_Join"}}}}])
+[
+  { _id: ObjectId("65143d5a15f0b19281888df0"), New_Date: '12/10/1980' },
+  { _id: ObjectId("65143f1b15f0b19281888df1"), New_Date: '11/08/1977' },
+  { _id: ObjectId("65143fa315f0b19281888df2"), New_Date: '23/01/1965' },
+  { _id: ObjectId("651440df15f0b19281888df3"), New_Date: '02/05/1998' },
+  { _id: ObjectId("6514424115f0b19281888df4"), New_Date: '19/04/1987' },
+  { _id: ObjectId("651442ba15f0b19281888df5"), New_Date: '21/09/1992' },
+  { _id: ObjectId("651443a615f0b19281888df6"), New_Date: '16/03/1954' },
+  { _id: ObjectId("6514441615f0b19281888df7"), New_Date: '29/11/1970' },
+  { _id: ObjectId("6514445b15f0b19281888df8"), New_Date: '26/12/1983' },
+  { _id: ObjectId("6514453915f0b19281888df9"), New_Date: '07/06/1961' },
+  { _id: ObjectId("6514461a15f0b19281888dfa"), New_Date: '12/04/1969' },
+  { _id: ObjectId("6514469d15f0b19281888dfb"), New_Date: '21/09/1973' },
+  { _id: ObjectId("651446f915f0b19281888dfc"), New_Date: null }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"New_Date":{"$dateToString":{"format":"%d/%m/%Y","date":"$Date_of_Join"}}}}])
+[
+  { Name: 'Srinivasan', New_Date: '12/10/1980' },
+  { Name: 'Wu', New_Date: '11/08/1977' },
+  { Name: 'Mozart', New_Date: '23/01/1965' },
+  { Name: 'Einstein', New_Date: '02/05/1998' },
+  { Name: 'El Said', New_Date: '19/04/1987' },
+  { Name: 'Gold', New_Date: '21/09/1992' },
+  { Name: 'Katz', New_Date: '16/03/1954' },
+  { Name: 'Califieri', New_Date: '29/11/1970' },
+  { Name: 'Singh', New_Date: '26/12/1983' },
+  { Name: 'Crick', New_Date: '07/06/1961' },
+  { Name: 'Brandt', New_Date: '12/04/1969' },
+  { Name: 'Kim', New_Date: '21/09/1973' }
+]
+University> db.FACULTY_INFO.find({"$expr":{"$gt":[{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},1000*60*60*24*30]},1]}}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:116)
+
+> 1 | db.FACULTY_INFO.find({"$expr":{"$gt":[{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},1000*60*60*24*30]},1]}}})
+    |                                                                                                                     ^
+  2 |
+
+University> db.FACULTY_INFO.find({"$expr":{"$gt":[{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},1000*60*60*24*30]},1]}})
+
+University> db.FACULTY_INFO.find({"$expr":{"$gt":[{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},1000*60*60*2)
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:105)
+
+> 1 | db.FACULTY_INFO.find({"$expr":{"$gt":[{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},1000*60*60*2)
+    |                                                                                                          ^
+  2 |
+
+University> db.FACULTY_INFO.find({"$expr":{"$gt":[{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},1000*60*60*2
+...
+University> db.FACULTY_INFO.aggregate([{"$project":{"Experience_in_months":{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},{1000*60*60*24*30}]},1}}])
+Uncaught:
+SyntaxError: Unexpected token (1:123)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$project":{"Experience_in_months":{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},{1000*60*60*24*30}]},1}}])
+    |                                                                                                                            ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$project":{"Experience_in_months":{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},{"$multiply":[1000,60,60,24,30]}}]},1}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:150)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$project":{"Experience_in_months":{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},{"$multiply":[1000,60,60,24,30]}}]},1}}])
+    |
+                       ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Experience_in_months":{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},{"$multiply":[1000,60,60,24,30]}]}}}])
+[
+  { Name: 'Srinivasan', Experience_in_months: -523.0414947515432 },
+  { Name: 'Wu', Experience_in_months: -561.6414947515432 },
+  { Name: 'Mozart', Experience_in_months: -714.4081614182098 },
+  { Name: 'Einstein', Experience_in_months: -309.3414947515432 },
+  { Name: 'El Said', Experience_in_months: -443.7081614182099 },
+  { Name: 'Gold', Experience_in_months: -377.64149475154323 },
+  { Name: 'Katz', Experience_in_months: -846.6081614182099 },
+  { Name: 'Califieri', Experience_in_months: -643.2081614182099 },
+  { Name: 'Singh', Experience_in_months: -484.0414947515432 },
+  { Name: 'Crick', Experience_in_months: -758.6081614182099 },
+  { Name: 'Brandt', Experience_in_months: -663.0748280848766 },
+  { Name: 'Kim', Experience_in_months: -608.9748280848765 }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Experience_in_months":{"$divide":[{"$subtract":[new Date(),"$Date_of_Join"]},{"$multiply":[1000,60,60,24,30]}]}}}])
+[
+  { Name: 'Srinivasan', Experience_in_months: 523.0415047554012 },
+  { Name: 'Wu', Experience_in_months: 561.6415047554012 },
+  { Name: 'Mozart', Experience_in_months: 714.4081714220679 },
+  { Name: 'Einstein', Experience_in_months: 309.3415047554012 },
+  { Name: 'El Said', Experience_in_months: 443.7081714220679 },
+  { Name: 'Gold', Experience_in_months: 377.64150475540123 },
+  { Name: 'Katz', Experience_in_months: 846.6081714220679 },
+  { Name: 'Califieri', Experience_in_months: 643.208171422068 },
+  { Name: 'Singh', Experience_in_months: 484.0415047554012 },
+  { Name: 'Crick', Experience_in_months: 758.6081714220679 },
+  { Name: 'Brandt', Experience_in_months: 663.0748380887346 },
+  { Name: 'Kim', Experience_in_months: 608.9748380887346 }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Experience_in_months":
+...
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Experience_in_months":{"$trunc":[{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},{"$multiply":[1000,60,60,24,30]}]},0]}}}])
+[
+  { Name: 'Srinivasan', Experience_in_months: -523 },
+  { Name: 'Wu', Experience_in_months: -561 },
+  { Name: 'Mozart', Experience_in_months: -714 },
+  { Name: 'Einstein', Experience_in_months: -309 },
+  { Name: 'El Said', Experience_in_months: -443 },
+  { Name: 'Gold', Experience_in_months: -377 },
+  { Name: 'Katz', Experience_in_months: -846 },
+  { Name: 'Califieri', Experience_in_months: -643 },
+  { Name: 'Singh', Experience_in_months: -484 },
+  { Name: 'Crick', Experience_in_months: -758 },
+  { Name: 'Brandt', Experience_in_months: -663 },
+  { Name: 'Kim', Experience_in_months: -608 }
+]
+University> db.FACULTY_INFO.aggregate([{ "$match": { "Name": { "$ne": "" } } }, { "$project": { "Name": 1, "_id": 0, "Experience_in_months": { "$trunc": [{ "$divide": [{ "$subtract": [new Date(),"$Date_of_Join"] }, { "$multiply": [1000, 60, 60, 24, 30] }] }, 0] } } }])
+[
+  { Name: 'Srinivasan', Experience_in_months: 523 },
+  { Name: 'Wu', Experience_in_months: 561 },
+  { Name: 'Mozart', Experience_in_months: 714 },
+  { Name: 'Einstein', Experience_in_months: 309 },
+  { Name: 'El Said', Experience_in_months: 443 },
+  { Name: 'Gold', Experience_in_months: 377 },
+  { Name: 'Katz', Experience_in_months: 846 },
+  { Name: 'Califieri', Experience_in_months: 643 },
+  { Name: 'Singh', Experience_in_months: 484 },
+  { Name: 'Crick', Experience_in_months: 758 },
+  { Name: 'Brandt', Experience_in_months: 663 },
+  { Name: 'Kim', Experience_in_months: 608 }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Experience_in_months":{"$trunc":[{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},{"$multiply":[1000,60,60,24,30]}]},0]},"Experience_in_years":{"$trunc":[{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},{"$multiply":[1000,60,60,24,30,12]}]},0]}}}])
+[
+  {
+    Name: 'Srinivasan',
+    Experience_in_months: -523,
+    Experience_in_years: -43
+  },
+  { Name: 'Wu', Experience_in_months: -561, Experience_in_years: -46 },
+  {
+    Name: 'Mozart',
+    Experience_in_months: -714,
+    Experience_in_years: -59
+  },
+  {
+    Name: 'Einstein',
+    Experience_in_months: -309,
+    Experience_in_years: -25
+  },
+  {
+    Name: 'El Said',
+    Experience_in_months: -443,
+    Experience_in_years: -36
+  },
+  {
+    Name: 'Gold',
+    Experience_in_months: -377,
+    Experience_in_years: -31
+  },
+  {
+    Name: 'Katz',
+    Experience_in_months: -846,
+    Experience_in_years: -70
+  },
+  {
+    Name: 'Califieri',
+    Experience_in_months: -643,
+    Experience_in_years: -53
+  },
+  {
+    Name: 'Singh',
+    Experience_in_months: -484,
+    Experience_in_years: -40
+  },
+  {
+    Name: 'Crick',
+    Experience_in_months: -758,
+    Experience_in_years: -63
+  },
+  {
+    Name: 'Brandt',
+    Experience_in_months: -663,
+    Experience_in_years: -55
+  },
+  { Name: 'Kim', Experience_in_months: -608, Experience_in_years: -50 }
+]
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Experience_in_months":{"$trunc":[{"$divide":[{"$subtract":[new Date(),"$Date_of_Join"]},{"$multiply":[1000,60,60,24,30]}]},0]},"Experience_in_years":{"$trunc":[{"$di
+vide":[{"$subtract":[new Date(),"$Date_of_Join"]},{"$multiply":[1000,60,60,24,30,12]}]},0]}}}])
+[
+  {
+    Name: 'Srinivasan',
+    Experience_in_months: 523,
+    Experience_in_years: 43
+  },
+  { Name: 'Wu', Experience_in_months: 561, Experience_in_years: 46 },
+  {
+    Name: 'Mozart',
+    Experience_in_months: 714,
+    Experience_in_years: 59
+  },
+  {
+    Name: 'Einstein',
+    Experience_in_months: 309,
+    Experience_in_years: 25
+  },
+  {
+    Name: 'El Said',
+    Experience_in_months: 443,
+    Experience_in_years: 36
+  },
+  { Name: 'Gold', Experience_in_months: 377, Experience_in_years: 31 },
+  { Name: 'Katz', Experience_in_months: 846, Experience_in_years: 70 },
+  {
+    Name: 'Califieri',
+    Experience_in_months: 643,
+    Experience_in_years: 53
+  },
+  { Name: 'Singh', Experience_in_months: 484, Experience_in_years: 40 },
+  { Name: 'Crick', Experience_in_months: 758, Experience_in_years: 63 },
+  {
+    Name: 'Brandt',
+    Experience_in_months: 663,
+    Experience_in_years: 55
+  },
+  { Name: 'Kim', Experience_in_months: 608, Experience_in_years: 50 }
+]
+University> db.FACULTY_INFO.aggregate([{"$project":{"Experience_in_months":{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},{"$multiply":[1000,60,60,24,30]}}]},
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:150)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$project":{"Experience_in_months":{"$divide":[{"$subtract":["$Date_of_Join",new Date()]},{"$multiply":[1000,60,60,24,30]}}]},
+    |
+                       ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$project":{"Day_of_week":{"$let":{"vars":{"Days":["","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]},"in":{"$arrayElemAt":["$$Days","$dayOfWeek":"$Date_of_Join"}]}}}}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:198)
+
+> 1 | db.FACULTY_INFO.aggregate([{"$project":{"Day_of_week":{"$let":{"vars":{"Days":["","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]},"in":{"$arrayElemAt":["$$Days","$dayOfWeek":"$Date_of_Join"}]}}}}}])
+    |
+                                                                       ^
+  2 |
+
+University> db.FACULTY_INFO.aggregate([{"$project":{"Day_of_week":{"$let":{"vars":{"Days":["","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]},"in":{"$arrayElemAt":["$$Days",{"$dayOfWeek":"$Date_of_Join"}]}}}}}])
+MongoServerError: Invalid $project :: caused by :: 'Days' starts with an invalid character for a user variable name
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Day_of_week":{"$let":{"vars":{"Days":[,"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]},"in":{"$arrayElemAt":["$$Days",{"$dayOfWeek":"$Date_of_Join"}]}}}}}])
+MongoServerError: Invalid $project :: caused by :: 'Days' starts with an invalid character for a user variable name
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Day_of_week":{"$let":{vars:{"Days":[,"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]},in:{"$arrayElemAt":["$$Days",{"$dayOfWeek":"$Date_of_Join"}]}}}}}])
+MongoServerError: Invalid $project :: caused by :: 'Days' starts with an invalid character for a user variable name
+University> db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Day_of_week":{"$let":{vars:{"days":[,"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]},in:{"$arrayElemAt":["$$days",{"$dayOfWeek":"$Date_of_Join"}]}}}}}])
+[
+  { Name: 'Srinivasan', Day_of_week: 'Monday' },
+  { Name: 'Wu', Day_of_week: 'Friday' },
+  { Name: 'Mozart', Day_of_week: 'Sunday' },
+  { Name: 'Einstein', Day_of_week: 'Sunday' },
+  { Name: 'El Said', Day_of_week: 'Monday' },
+  { Name: 'Gold', Day_of_week: 'Tuesday' },
+  { Name: 'Katz', Day_of_week: 'Wednesday' },
+  { Name: 'Califieri', Day_of_week: 'Monday' },
+  { Name: 'Singh', Day_of_week: 'Tuesday' },
+  { Name: 'Crick', Day_of_week: 'Thursday' },
+  { Name: 'Brandt', Day_of_week: 'Sunday' },
+  { Name: 'Kim', Day_of_week: 'Saturday' }
+]
+University> db.FACULTY_INFO.aggregate([{"$project":{"Future_Date":{"$add":[new Date(),15]
+...
+University> db.createCollection("Dual_date")
+{ ok: 1 }
+University> db.Dual_date.insertOne({"Date":new Date()})
+{
+  acknowledged: true,
+  insertedId: ObjectId("651523fd359d8f93afcb8d1a")
+}
+University> db.Dual_date.aggregate([{"$project":{"Future_Date":{"$add":["$Date",15]}}}])
+[
+  {
+    _id: ObjectId("651523fd359d8f93afcb8d1a"),
+    Future_Date: ISODate("2023-09-28T06:58:05.658Z")
+  }
+]
+University> db.Dual_date.aggregate([{"$project":{"Date":1,"_id":0,"Future_Date":{"$add":["$Date",15]}}}])
+[
+  {
+    Date: ISODate("2023-09-28T06:58:05.643Z"),
+    Future_Date: ISODate("2023-09-28T06:58:05.658Z")
+  }
+]
+test> use University
+switched to db University
+University> db.Dual_number.find({})
+
+University> db.craeteCollection("Dual_number")
+TypeError: db.craeteCollection is not a function
+University> db.createCollection("Dual_number")
+{ ok: 1 }
+University> db.Dual_number.insertOne({"Number":94204.27348})
+{
+  acknowledged: true,
+  insertedId: ObjectId("651534bf5f052c4fbf9be0c5")
+}
+University> db.Dual_number.find({"$project":{"Number":1,"Truncated_Value":{"$trunc":["$Number",2]}}})
+MongoServerError: unknown top level operator: $project. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.
+University> db.Dual_number.aggregate([{"$project":{"Number":1,"Truncated_Value":{"$trunc":["$Number",2]}}}])
+[
+  {
+    _id: ObjectId("651534bf5f052c4fbf9be0c5"),
+    Number: 94204.27348,
+    Truncated_Value: 94204.27
+  }
+]
+University> db.Dual_number.aggregate([{"$project":{"_id":0,"Number":1,"Truncated_Value":{"$trunc":["$Number",2]}}}])
+[ { Number: 94204.27348, Truncated_Value: 94204.27 } ]
+University> db.createCollection("Dual_power")
+{ ok: 1 }
+University> db.createCollection("Dual_power"
+...
+University> db.Dual_number.insertOne({"Num":8})
+{
+  acknowledged: true,
+  insertedId: ObjectId("651535ef5f052c4fbf9be0c6")
+}
+University> db.Dual_number.aggregate([{"$project":{"_id":0,"Num":1,"Power":{"$add":[5,{"$pow":["$Num",9]}]}}}])
+[ { Power: null }, { Num: 8, Power: 134217733 } ]
+University> db.Dual_number.aggregate([{"$project":{"_id":0,"Num":1,"Power":{"$add":[5,{"$pow":["$Num",9]}]}}},{"$match":{"Power":{"$ne":null}}}])
+[ { Num: 8, Power: 134217733 } ]
+University> db.Dual_number.aggregate([{"$project":{"_id":0,"Num":1,"Sqrt":{"$sqrt":["$Num",2]}]}}},{"$match":{"Power":{"$ne":null}}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:82)
+
+> 1 | db.Dual_number.aggregate([{"$project":{"_id":0,"Num":1,"Sqrt":{"$sqrt":["$Num",2]}]}}},{"$match":{"Power":{"$ne":null}}}])
+    |                                                                                   ^
+  2 |
+
+University> db.Dual_number.aggregate([{"$project":{"_id":0,"Num":1,"Sqrt":{"$sqrt":["$Num",2]}}},{"$match":{"Power":{"$ne":null}}}])
+MongoServerError: Invalid $project :: caused by :: Expression $sqrt takes exactly 1 arguments. 2 were passed in.
+University> db.Dual_number.aggregate([{"$project":{"_id":0,"Num":1,"Sqrt":{"$sqrt":["$Num"]}}},{"$match":{"Power":{"$ne":null}}}])
+
+University> db.Dual_number.aggregate([{"$project":{"_id":0,"Num":1,"Sqrt":{"$sqrt":["$Num"]}}}])
+[ { Sqrt: null }, { Num: 8, Sqrt: 2.8284271247461903 } ]
+University> db.Dual_number.aggregate([{"$project":{"_id":0,"Num":1,"Sqrt":{"$sqrt":["$Num"]}}},{"$match":{"Sqrt":{"$ne":null}}}])
+[ { Num: 8, Sqrt: 2.8284271247461903 } ]
+University> db.createCollection("Dual_lc")
+{ ok: 1 }
+University> db.Dual_lc.insertOne({"String":"HELLO ITER"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("651539305f052c4fbf9be0c7")
+}
+University> db.Dual_lc.aggregate([{"$project":{"_id":0,"String":1,"lower_case":{"$toLower":"$String"}}},{"$match":{"Sqrt":{"$ne":null}}}])
+
+University> db.Dual_lc.aggregate([{"$project":{"_id":0,"String":1,"lower_case":{"$toLower":"$String"}}}])
+[ { String: 'HELLO ITER', lower_case: 'hello iter' } ]
+University>db.Dual_date.find({})
+[
+  {
+    _id: ObjectId("651523fd359d8f93afcb8d1a"),
+    Date: ISODate("2023-09-28T06:58:05.643Z")
+  }
+]
+University> db.Dual_date.aggregate([{"$project":{"Date":1,"_id":0,"Future_Date":{"$add":["$Date",{"$multiply":[15,24,60,60,1000]}]}}}])
+[
+  {
+    Date: ISODate("2023-09-28T06:58:05.643Z"),
+    Future_Date: ISODate("2023-10-13T06:58:05.643Z")
+  }
+]

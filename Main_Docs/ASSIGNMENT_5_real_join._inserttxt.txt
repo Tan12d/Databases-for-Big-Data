@@ -1,0 +1,20 @@
+db.CUSTOMER.insertMany([{"Cust_no":"C0001","Name":"Raj Anand Singh","Phone_no":9861258466,"City":"Delhi"},{"Cust_no":"C0002","Name":"Ankita Singh","Phone_no":9879958651,"City":"Bangalore"},{"Cust_no":"C0003","Name":"Soumya Jha","Phone_no":9885623344,"City":"Mumbai"},{"Cust_no":"C0004","Name":"Abhijit Mishra","Phone_no":9455845425,"City":"Mumbai"},{"Cust_no":"C0005","Name":"Yash Saraf","Phone_no":9665854585,"City":"Kolkata"},{"Cust_no":"C0006","Name":"Swaroop Ray","Phone_no":9437855466,"City":"Chennai"},{"Cust_no":"C0007","Name":"Surya Narayan","Phone_no":9937955212,"City":"Gurgaon"},{"Cust_no":"C0008","Name":"Pranav Praveen","Phone_no":9336652441,"City":"Pune"},{"Cust_no":"C0009","Name":"Stuti Misra","Phone_no":7870266534,"City":"Mumbai"},{"Cust_no":"C0010","Name":"Aslesha Tiwari","Phone_no":null,"City":"Mumbai"}])
+
+
+db.ACCOUNT.insertMany([{"Account_no":"A0001","Type":"SB","Balance":200000,"Branch_code":"B003"},{"Account_no":"A0002","Type":"SB","Balance":15000,"Branch_code":"B002"},{"Account_no":"A0003","Type":"CA","Balance":850000,"Branch_code":"B004"},{"Account_no":"A0004","Type":"CA","Balance":35000,"Branch_code":"B004"},{"Account_no":"A0005","Type":"FD","Balance":28500,"Branch_code":"B005"},{"Account_no":"A0006","Type":"FD","Balance":550000,"Branch_code":"B005"},{"Account_no":"A0007","Type":"SB","Balance":48000,"Branch_code":"B001"},{"Account_no":"A0008","Type":"SB","Balance":7200,"Branch_code":"B002"},{"Account_no":"A0009","Type":"SB","Balance":18750,"Branch_code":"B003"},{"Account_no":"A0010","Type":"FD","Balance":99000,"Branch_code":"B004"}])
+
+
+
+db.DEPOSITOR.insertMany([{"Cust_no":"C0003","Account_no":"A0001"},{"Cust_no":"C0004","Account_no":"A0001"},{"Cust_no":"C0004","Account_no":"A0002"},{"Cust_no":"C0006","Account_no":"A0003"},{"Cust_no":"C0006","Account_no":"A0004"},{"Cust_no":"C0001","Account_no":"A0005"},{"Cust_no":"C0002","Account_no":"A0005"},{"Cust_no":"C0010","Account_no":"A0006"},{"Cust_no":"C0009","Account_no":"A0007"},{"Cust_no":"C0008","Account_no":"A0008"},{"Cust_no":"C0007","Account_no":"A0009"},{"Cust_no":"C0006","Account_no":"A0010"}])
+
+
+
+db.LOAN.insertMany([{"Loan_no":"L0001","Cust_no":"C0005","Amount":3000000,"Branch_code":"B006"},{"Loan_no":"L0002","Cust_no":"C0001","Amount":50000,"Branch_code":"B005"},{"Loan_no":"L0003","Cust_no":"C0002","Amount":8000000,"Branch_code":"B004"},{"Loan_no":"L0004","Cust_no":"C0010","Amount":100000,"Branch_code":"B004"},{"Loan_no":"L0005","Cust_no":"C0009","Amount":9500000,"Branch_code":"B005"},{"Loan_no":"L0006","Cust_no":"C0008","Amount":25000,"Branch_code":"B006"}])
+
+
+
+db.BRANCH.insertMany([{"Branch_code":"B001","Branch_name":"Janakpuri Branch","Branch_city":"Delhi"},{"Branch_code":"B002","Branch_name":"Chandnichowk Branch","Branch_city":"Delhi"},{"Branch_code":"B003","Branch_name":"Juhu Branch","Branch_city":"Mumbai"},{"Branch_code":"B004","Branch_name":"Andheri Branch","Branch_city":"Mumbai"},{"Branch_code":"B005","Branch_name":"Saltlake Branch","Branch_city":"Kolkata"},{"Branch_code":"B006","Branch_name":"Srirampuram Branch","Branch_city":"Chennai"}])
+
+
+
+db.INSTALLMENT.insertMany([{"Inst_no":1,"Loan_no":"L0005","Inst_amount":500000},{"Inst_no":1,"Loan_no":"L0002","Inst_amount":10000},{"Inst_no":1,"Loan_no":"L0003","Inst_amount":50000},{"Inst_no":1,"Loan_no":"L0004","Inst_amount":20000},{"Inst_no":2,"Loan_no":"L0005","Inst_amount":500000},{"Inst_no":1,"Loan_no":"L0006","Inst_amount":3000},{"Inst_no":2,"Loan_no":"L0002","Inst_amount":10000},{"Inst_no":3,"Loan_no":"L0002","Inst_amount":10000},{"Inst_no":2,"Loan_no":"L0003","Inst_amount":50000},{"Inst_no":2,"Loan_no":"L0004","Inst_amount":20000}])

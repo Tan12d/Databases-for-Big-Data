@@ -1,0 +1,115 @@
+Q1)
+a)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$match":{"Acc_data.Account_no":"A0004"}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$project":{"_id":0,"Cust_data.Name":1,"Cust_data.Phone_no":1,"Cust_data.Cust_no":1}}])
+
+b)
+db.LOAN.aggregate([{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"L_data"}},{"$match":{"L_data.Name":"Yash Saraf"}},{"$project":{"_id":0,"Loan_no":1,"Branch_code":1}}])
+
+c)
+db.CUSTOMER.aggregate([{"$lookup":{"from":"LOAN","localField":"Cust_no","foreignField":"Cust_no","as":"C_data"}},{"$match":{"C_data":{"$size":0}}},{"$project":{"_id":0,"Name":1}}])
+
+d)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$match":{"Cust_data.Cust_no":"C0010"}},{"$project":{"_id":0,"Cust_data.Name":1,"Acc_data.Account_no":1,"Acc_data.Balance":1}}])
+
+e)
+db.CUSTOMER.aggregate([{"$lookup":{"from":"LOAN","localField":"Cust_no","foreignField":"Cust_no","as":"C_data"}},{"$match":{"Name":"Aslesha Tiwari"}},{"$lookup":{"from":"BRANCH","localField":"C_data.Branch_code","foreignField":"Branch_code","as":"B_data"}},{"$project":{"_id":0,"B_data.Branch_city":1}}])
+
+f)
+db.CUSTOMER.aggregate([{"$lookup":{"from":"LOAN","localField":"Cust_no","foreignField":"Cust_no","as":"C_data"}},{"$match":{"Name":"Ankita Singh"}},{"$lookup":{"from":"INSTALLMENT","localField":"C_data.Loan_no","foreignField":"Loan_no","as":"I_data"}},{"$project":{"_id":0,"I_data.Inst_no":1,"I_data.Loan_no":1,"I_data.Inst_amount":1}}])
+
+g)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$match":{"Cust_data.Name":"Abhijit Mishra"}},{"$lookup":{"from":"BRANCH","localField":"Acc_data.Branch_code","foreignField":"Branch_code","as":"B_data"}},{"$project":{"_id":0,"B_data.Branch_name":1,"B_data.Branch_city":1}}])
+
+h)
+db.ACCOUNT.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"A_data"}},{"$unwind":"$A_data"},{"$project":{"_id":0,"ACCOUNT_NO":null,"TYPE":null}},{"$out":"ACCOUNT_TYPE"}])
+
+i)
+db.ACCOUNT.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"A_data"}},{"$unwind":"$A_data"},{"$match":{"A_data.Balance":{"$lt":50000}}},{"$project":{"_id":0,"ACCOUNT_NO":"$A_data.Account_no","TYPE":"$A_data.Type"}},{"$out":"ACCOUNT_TYPE"}])
+
+j)
+
+
+k)
+
+
+l)
+db.CUSTOMER.aggregate([{"$lookup":{"from":"LOAN","localField":"Cust_no","foreignField":"Cust_no","as":"L_data"}},{"$match":{"L_data.Loan_no":{"$regex":/^L/}}},{"$lookup":{"from":"DEPOSITOR","localField":"Cust_no","foreignField":"Cust_no","as":"D_data"}},{"$lookup":{"from":"ACCOUNT","localField":"D_data.Account_no","foreignField":"Account_no","as":"A_data"}},{"$match":{"A_data.Account_no":{"$regex":/^A/}}},{"$project":{"_id":0,"Name":1}}])
+
+m)
+db.CUSTOMER.aggregate([{"$lookup":{"from":"LOAN","localField":"Cust_no","foreignField":"Cust_no","as":"L_data"}},{"$match":{"L_data.Loan_no":{"$regex":/^L/}}},{"$lookup":{"from":"DEPOSITOR","localField":"Cust_no","foreignField":"Cust_no","as":"D_data"}},{"$lookup":{"from":"ACCOUNT","localField":"D_data.Account_no","foreignField":"Account_no","as":"A_data"}},{"$match":{"A_data":{"$size":0}}},{"$project":{"_id":0,"Name":1}}])
+
+n)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$group":{"_id":"$Cust_data.Name","No_of_Accounts":{"$count":{}}}},{"$match":{"No_of_Accounts":{"$gt":1}}},{"$project":{"_id":0,"Cust_data.Name":"$_id","No_of_Accounts":
+1}}])
+
+o)
+
+
+p)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$group":{"_id":"$Cust_data.Cust_no","No_of_Accounts":{"$count":{}}}},{"$match":{"No_of_Accounts":{"$gt":1}}},{"$project":{"_id":0,"Cust_data.Cust_no":"$_id","No_of_Accounts":1}}])
+
+q)
+
+
+r)
+db.ACCOUNT.aggregate([{"$lookup":{"from":"BRANCH","localField":"Branch_code","foreignField":"Branch_code","as":"A"}},{"$group":{"_id":"$A.Branch_code","Avg_account_balance":{"$avg":"$Balance"}}},{"$match":{"Avg_account_balance":{"$gt":60000}}},{"$project":{"_id":0,"Branch_code":1,"Avg_account_balance":1}}])
+
+s)
+/// db.ACCOUNT.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"A"}},{"$group":{"_id":"$A.Type","Total_acc_balance":{"$sum":"$Balance"}}},{"$match":{"Total_acc_balance":{"$gt":60000}}},{"$project":{"_id":0,"A.Account_no":1,"Avg_account_balance":1}}])
+
+t)
+
+
+u)
+db.LOAN.aggregate([{"$lookup":{"from":"BRANCH","localField":"Branch_code","foreignField":"Branch_code","as":"L"}},{"$project":{"_id":0,"L.Branch_code":1,"L.Branch_name":1,"L.Branch_city":1}}])
+
+v)
+db.LOAN.aggregate([{"$lookup":{"from":"INSTALLMENT","localField":"Loan_no","foreignField":"Loan_no","as":"I"}},{$match:{"I":{"$size":0}}},{"$project":{"_id":0,"Loan_no":1,"Cust_no":1,"Amount":1,"Branch_code":1}}])
+
+w)
+
+
+Q2)
+a) db.LOAN.aggregate([{"$lookup":{"from":"BRANCH","localField":"Branch_code","foreignField":"Branch_code","as":"Loan_data"}},{"$match":{"Loan_data.Branch_city":"Mumbai"}},{"$project":{"_id":0,"Loan_no":1}}])
+
+b)
+db.ACCOUNT.aggregate([{"$lookup":{"from":"BRANCH","localField":"Branch_code","foreignField":"Branch_code","as":"Account_data"}},{"$match":{"Account_data.Branch_city":"Delhi"}},{"$project":{"_id":0,"Type":1}}])
+
+c)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$match":{"Acc_data.Balance":{"$gt":100000}}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$project":{"_id":0,"Cust_data.Name":1,"Cust_data.Phone_no":1}}])
+
+or
+
+const x= db.ACCOUNT.aggregate([{"$lookup":{"from":"DEPOSITOR","localField":"Account_no","foreignField":"Account_no","as":"Acc"}},{"$match":{"Balance":{"$gt":100000}}},{"$project":{"_id":0,"Account_no":Bank4> const x= db.ACCOUNT.aggregate([{"$lookup":{"from":"DEPOSITOR","localField":"Account_no","foreignField":"Account_no","as":"AccBank4> const x= db.ACCOUNT.aggregate([{"$lookup":{"from":"DEPOSITOR","localField":"Account_no","foreignField":"Account_no","as":"Acc"}},{"$match":{"Balance":{"$gt":100000}}},{"$project":{"_id":0,"Account_no":1}}]).toArray()
+
+const y=[];x.forEach(function (item){y.push(item.Account_no);});
+
+db.CUSTOMER.aggregate([{"$lookup":{"from":"DEPOSITOR","localField":"Cust_no","foreignField":"Cust_no","as":"Customer_data"}},{"$match":{"Customer_data.Account_no":{"$in":y}}},{"$project":{"_id":0,"Name":1,"Phone_no":1}}])
+
+d)
+db.LOAN.aggregate([{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"L_data"}},{"$match":{"L_data.Name":"Raj Anand Singh"}},{"$lookup":{"from":"INSTALLMENT","localField":"Loan_no","foreignField":"Loan_no","as":"I_data"}},{"$project":{"_id":0,"I_data.Inst_no":1,"I_data.Inst_amount":1}}])
+
+e)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$match":{"Acc_data.Type":{"$ne":"SB"}}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$project":{"_id":0,"Cust_data.Name":1,"Acc_data.Type":1}}])
+
+
+f) db.LOAN.aggregate([{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"L_data"}},{"$lookup":{"from":"INSTALLMENT","localField":"Loan_no","foreignField":"Loan_no","as":"I_data"}},{"$match":{"I_data.Inst_amount":50000}},{"$project":{"_id":0,"L_data.Name":1}}])
+
+g)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$lookup":{"from":"BRANCH","localField":"Acc_data.Branch_code","foreignField":"Branch_code","as":"Branch_data"}},{"$match":{"Branch_data.Branch_name":{"$regex":/^Saltlake/}}},{"$project":{"_id":0,"Cust_data.Name":1,"Cust_data.Phone_no":1}}])
+
+h)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$match":{"Cust_data.Name":"Abhijit Mishra"}},{"$lookup":{"from":"BRANCH","localField":"Acc_data.Branch_code","foreignField":"Branch_code","as":"Branch_data"}},{"$project":{"_id":0,"Branch_data.Branch_name":1,"Branch_data.Branch_city":1}}])
+
+i)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$match":{"Cust_data.Name":"Swaroop Ray"}},{"$project":{"_id":0,"Acc_data.Type":1,"Acc_data.Balance":1}}])
+
+j)
+db.DEPOSITOR.aggregate([{"$lookup":{"from":"ACCOUNT","localField":"Account_no","foreignField":"Account_no","as":"Acc_data"}},{"$lookup":{"from":"CUSTOMER","localField":"Cust_no","foreignField":"Cust_no","as":"Cust_data"}},{"$group":{"_id":"$Cust_data.Name","No_of_Accounts":{"$count":{}}}},{"$match":{"No_of_Accounts":{"$gt":1}}},{"$project":{"_id":0,"Cust_data.Name":"$_id","No_of_Accounts":
+1}}])
+
+k)
+db.ACCOUNT.aggregate([{"$group":{"_id":null,"maxBalance":{"$max":"$Balance"}}},{"$lookup":{"from":"ACCOUNT","let":{"maxBalance":"$maxBalance"},"pipeline":[{"$match":{"$expr":{"$eq":["$Balance","$$maxBalance"]}}}],"as":"Acc_max_Balance"}},{"$unwind":"$Acc_max_Balance"},{"$project":{"_id":0,"Account_no":"$Acc_max_Balance.Account_no","Balance":"$Acc_max_Balance.Balance"}}])
+
+l)
+

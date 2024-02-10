@@ -1,0 +1,97 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/):
+
+Current Mongosh Log ID: 650c8d52871c8798b75cb208
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.0
+Using MongoDB:          6.0.5
+Using Mongosh:          2.0.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2023-09-13T17:56:16.658+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+University   72.00 KiB
+admin        40.00 KiB
+config      108.00 KiB
+employee     80.00 KiB
+employees   144.00 KiB
+local        88.00 KiB
+test        224.00 KiB
+test> use University
+switched to db University
+University> show collections
+Instructor
+University> db.Instructor.insertOne({"ID":22222,"Name":"Einstein","Dept_name":"Physics","Salary":95000})
+{
+  acknowledged: true,
+  insertedId: ObjectId("650c8e40871c8798b75cb209")
+}
+University> db.Instructor.find({})
+[
+  {
+    _id: ObjectId("650c6f514ae5cd29ea3f1490"),
+    ID: 10101,
+    Name: 'Srinivasan',
+    Dept_name: 'Comp. Sci.',
+    Salary: 65000
+  },
+  {
+    _id: ObjectId("650c6fae4ae5cd29ea3f1491"),
+    ID: 12121,
+    Name: 'Wu',
+    Dept_name: 'Finance',
+    Salary: 90000
+  },
+  {
+    _id: ObjectId("650c72524ae5cd29ea3f1492"),
+    ID: 15151,
+    Name: 'Mozart',
+    Dept_name: 'Music',
+    Salary: 40000
+  },
+  {
+    _id: ObjectId("650c8e40871c8798b75cb209"),
+    ID: 22222,
+    Name: 'Einstein',
+    Dept_name: 'Physics',
+    Salary: 95000
+  }
+]
+University> db.Instructor.find({"Name":1})
+
+University> db.Instructor.find({"Name":1})
+
+University> db.Instructor.find({},{"Name":1})
+[
+  { _id: ObjectId("650c6f514ae5cd29ea3f1490"), Name: 'Srinivasan' },
+  { _id: ObjectId("650c6fae4ae5cd29ea3f1491"), Name: 'Wu' },
+  { _id: ObjectId("650c72524ae5cd29ea3f1492"), Name: 'Mozart' },
+  { _id: ObjectId("650c8e40871c8798b75cb209"), Name: 'Einstein' }
+]
+University> db.Instructor.find({},{"Name":1, "_id":0})
+[
+  { Name: 'Srinivasan' },
+  { Name: 'Wu' },
+  { Name: 'Mozart' },
+  { Name: 'Einstein' }
+]
+University> db.Instructor.insertMany([{"ID":32343,"Name":"El Said","Dept_name":"History","Salary":60000},{"ID":33456,"Name":"Gold","Dept_name":"Physics","Salary":87000}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("650c8fbc871c8798b75cb20a"),
+    '1': ObjectId("650c8fbc871c8798b75cb20b")
+  }
+}
+University> db.Instructor.find({})
+[
+  {
+    _id: ObjectId("650c6f514ae5cd29ea3f1490"),
+    ID: 10101,
+    Name: 'Srinivasan',
+    Dept_name: 'Comp. Sci.',
+    Salary: 65000
+  },

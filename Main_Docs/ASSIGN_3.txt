@@ -1,0 +1,39 @@
+Q1)
+a)
+db.Teacher.find({"Dept_name":{"$in":['Physics','Music','Finance','Biology']}},{"Name":1,"Teaches.Course_id":1,"Teaches.Title":1,"Teaches.Credits":1})
+
+b)
+db.Teacher.find({"Name":{$regex:/K/},"Salary":{"$gt":65000}})
+
+c)
+
+
+d)
+db.Faculty_Info.find({"Salary":{"$gte":60000,"$lte":80000}})
+
+e)
+db.Faculty_Info.find({"Name":{"$regex":/^[A-Z][r][a-z]*/}})
+
+f)
+db.Faculty_Info.find({"Department":"Comp. Sci."},{"Name":1}).sort({"Salary":-1})
+
+g)
+db.Faculty_Info3.updateMany({},[{"$set":{"Salary":{"$add":[{"$multiply":["$Salary",0.15]},"$Salary"]}}}])
+
+h)
+db.Faculty_Info4.updateMany({"Department":"Comp. Sci.","Salary":{"$lt":70000}},[{"$set":{"Salary":{"$add":[{"$multiply":["$Salary",0.03]},"$Salary"]}}}])
+
+i)
+db.Faculty_Info.updateMany({},[{"$set":{"Annual_Salary":{"$multiply":["$Salary",12]}}}])
+
+j)
+db.Faculty_Info.updateMany({"Teaches.Title":"Game Design"},[{"$set":{"Teaches.Title":"Game Theory"}}])
+
+k)
+db.Faculty_Info5.deleteMany({"Department":"History"})
+
+l)
+db.Faculty_Info5.updateMany({"Teaches.Sub_code":{"$regex":/^BIO/}},{"$unset":{"Teaches.$[].Sub_code":"","Teaches.$[].Title":"","Teaches.$[].Credits":""}})
+
+
+

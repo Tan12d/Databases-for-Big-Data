@@ -1,0 +1,1 @@
+db.createView("ALL_CUSTOMERS","CUSTOMERS",["$project":{"Name":"$Name","Acc_Branch_code":"$Account.Branch_code","Acc_Branch_city":"$Account.Branch_city","Loan_Branch_code":"$Loan.Branch_code","Loan_Branch_city":"$Loan.Branch_city"}])

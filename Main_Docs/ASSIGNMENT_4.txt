@@ -1,0 +1,19 @@
+db.createCollection("Customers",{"validator":{"$jsonSchema":{"bsonType":"object","required":["Cust_no","Name","Phone_no","City","Account","Loan"],"properties":{"Cust_no":{"bsonType":"string","description":"Must start with 'C' and have a length of 5 characters","pattern":"^C.{4}$"},"Name":{"bsonType":"string","description":"Customer Name","minLength":1},"Phone_no":{"bsonType":"number","description":"Phone number"},"City":{"bsonType":"string","description":"City name","minLength":1},"Account":{"bsonType":"array","description":"Account Details","items":{"bsonType":"object","required":["Account_no","Type","Balance","Branch_code","Branch_name","Branch_city"],"properties":{"Account_no":{"bsonType":"string","description":"Must start with 'A' and have a length of 5 characters","pattern":"^A.{4}$"},"Type":{"bsonType":"string","description":"Must be of Types:'SB','FD','CA'","enum":["SB","FD","CA"]},"Balance":{"bsonType":"number","description":"Must be less than 10000000","maximum":9999999},"Branch_code":{"bsonType":"string","description":"Branch code"},"Branch_name":{"bsonType":"string","description":"Should not be null","minLength":1},"Branch_city":{"bsonType":"string","description":"Must be any metro city of India- Delhi, Mumbai, Kolkata, Chennai","enum":["Delhi","Mumbai","Kolkata","Chennai"]}}}},"Loan":{"bsonType":"object","description":"Customer's Loan","properties":{"Loan_no":{"bsonType":"string","description":"Must start with 'L' and have a length of 5 characters","pattern":"^L.{4}$"},"Amount":{"bsonType":"number","description":"Loan Amount","minimum":1001},"Branch_code":{"bsonType":"string","description":"Branch code"},"Branch_name":{"bsonType":"string","description":"Should not be null","minLength":1},"Branch_city":{"bsonType":"string","description":"Must be any metro city of India- Delhi, Mumbai, Kolkata, Chennai","enum":["Delhi","Mumbai","Kolkata","Chennai"]},"Installment":{"bsonType":"array","description":"Installment Details","items":{"bsonType":"object","required":["Inst_no","Inst_Amount"],"properties":{"Inst_no":{"bsonType":"number","description":"Installment number","maximum":10},r","description":"Installment Amount","minimum":1}}}}}}}}}})
+
+
+
+
+
+
+
+
+
+
+db.Customers.insertOne({"Cust_no":"C0001","Name":"Raj Anand Singh","Phone_no":9861258466,"City":"Delhi","Account":[{"Account_no":"A0005","Type":"FD","Balance":28500,"Branch_code":"B005","Branch_name":"SaltLake Branch","Branch_city":"Kolkata"}],"Loan":{"Loan_no":"L0002","Amount":50000,"Branch_code":"B005","Branch_name":"SaltLake Branch","Branch_city":"Kolkata","Installment":[{"Inst_no":1,"Inst_Amount":10000},{"Inst_no":2,"Inst_Amount":10000},{"Inst_no":3,"Inst_Amount":10000}]}})
+
+
+  db.Customers.insertOne({"Cust_no":"C0002","Name":"Ankita Singh","Phone_no":9879958651,"City":"Bangalore","Account":[{"Account_no":"A0005","Type":"FD","Balance":28500,"Branch_code":"B005","Branch_name":"SaltLake Branch","Branch_city":"Kolkata"}],"Loan":{"Loan_no":"L0003","Amount":8000000,"Branch_code":"B004","Branch_name":"Andheri Branch","Branch_city":"Mumbai","Installment":[{"Inst_no":1,"Inst_Amount":50000},{"Inst_no":2,"Inst_Amount":50000}]}})
+
+
+
+  db.Customers.insertOne({"Cust_no":"C0003","Name":"Soumya Jha","Phone_no":9885623344,"City":"Mumbai","Account":[{"Account_no":"A0001","Type":"SB","Balance":20000,"Branch_code":"B003","Branch_name":"Juhu Branch","Branch_city":"Mumbai"}],"Loan":{"Loan_no":"","Amount":null,"Branch_code":"","Branch_name":"","Branch_city":"","Installment":[{"Inst_no":null,"Inst_Amount":null}]}})

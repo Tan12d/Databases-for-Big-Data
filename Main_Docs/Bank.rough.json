@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "651704aa76b70830bea9385b"
+  },
+  "Account_no": "A0007",
+  "Type": "SB"
+},
+{
+  "_id": {
+    "$oid": "651704aa76b70830bea9385c"
+  },
+  "Account_no": "A0009",
+  "Type": "SB"
+},
+{
+  "_id": {
+    "$oid": "651704aa76b70830bea9385d"
+  },
+  "Account_no": "A0001",
+  "Type": "SB"
+},
+{
+  "_id": {
+    "$oid": "651704aa76b70830bea9385e"
+  },
+  "Account_no": "A0002",
+  "Type": "SB"
+},
+{
+  "_id": {
+    "$oid": "651704aa76b70830bea9385f"
+  },
+  "Account_no": "A0004",
+  "Type": "CA"
+},
+{
+  "_id": {
+    "$oid": "651704aa76b70830bea93860"
+  },
+  "Account_no": "A0008",
+  "Type": "SB"
+},
+{
+  "_id": {
+    "$oid": "651704aa76b70830bea93861"
+  },
+  "Account_no": "A0005",
+  "Type": "FD"
+}]

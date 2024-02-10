@@ -1,0 +1,208 @@
+[{
+  "_id": {
+    "$oid": "650daf8dc69992f1eaeb724b"
+  },
+  "Title": "Intro. to Biology",
+  "Credits": 4,
+  "Prereq_id": "",
+  "Department": "Biology",
+  "Dept": [
+    {
+      "Builder": "Watson",
+      "Budget": 90000
+    }
+  ],
+  "Sub_code": "BIO-101"
+},
+{
+  "_id": {
+    "$oid": "650daff5c69992f1eaeb724c"
+  },
+  "Title": "Genetics",
+  "Credits": 4,
+  "Prereq_id": "BIO-101",
+  "Department": "Biology",
+  "Dept": [
+    {
+      "Builder": "Watson",
+      "Budget": 90000
+    }
+  ],
+  "Sub_code": "BIO-301"
+},
+{
+  "_id": {
+    "$oid": "650db029c69992f1eaeb724d"
+  },
+  "Title": "Computational Biology",
+  "Credits": 3,
+  "Prereq_id": "BIO-101",
+  "Department": "Biology",
+  "Dept": [
+    {
+      "Builder": "Watson",
+      "Budget": 90000
+    }
+  ],
+  "Sub_code": "BIO-399"
+},
+{
+  "_id": {
+    "$oid": "650db076c69992f1eaeb724e"
+  },
+  "Title": "Intro. to Computer Science",
+  "Credits": 4,
+  "Prereq_id": "",
+  "Department": "Comp. Sci.",
+  "Dept": [
+    {
+      "Builder": "Taylor",
+      "Budget": 100000
+    }
+  ],
+  "Sub_code": "CS-101"
+},
+{
+  "_id": {
+    "$oid": "650db0b6c69992f1eaeb724f"
+  },
+  "Title": "Game Design",
+  "Credits": 4,
+  "Prereq_id": "CS-101",
+  "Department": "Comp. Sci.",
+  "Dept": [
+    {
+      "Builder": "Taylor",
+      "Budget": 100000
+    }
+  ],
+  "Sub_code": "CS-190"
+},
+{
+  "_id": {
+    "$oid": "650db0f7c69992f1eaeb7250"
+  },
+  "Title": "Robotics",
+  "Credits": 3,
+  "Prereq_id": "CS-101",
+  "Department": "Comp. Sci.",
+  "Dept": [
+    {
+      "Builder": "Taylor",
+      "Budget": 100000
+    }
+  ],
+  "Sub_code": "CS-315"
+},
+{
+  "_id": {
+    "$oid": "650db14cc69992f1eaeb7251"
+  },
+  "Title": "Database System Concepts",
+  "Credits": 3,
+  "Prereq_id": "CS-101",
+  "Department": "Comp. Sci.",
+  "Dept": [
+    {
+      "Builder": "Taylor",
+      "Budget": 100000
+    }
+  ],
+  "Sub_code": "CS-347"
+},
+{
+  "_id": {
+    "$oid": "650db1aac69992f1eaeb7252"
+  },
+  "Title": "Intro. to Digital Systems",
+  "Credits": 3,
+  "Prereq_id": "PHY-101",
+  "Department": "Elec. Eng.",
+  "Dept": [
+    {
+      "Builder": "Taylor",
+      "Budget": 85000
+    }
+  ],
+  "Sub_code": "EE-181"
+},
+{
+  "_id": {
+    "$oid": "650db1edc69992f1eaeb7253"
+  },
+  "Title": "Investment Banking",
+  "Credits": 3,
+  "Prereq_id": "",
+  "Department": "Finance",
+  "Dept": [
+    {
+      "Builder": "Painter",
+      "Budget": 120000
+    }
+  ],
+  "Sub_code": "FIN-201"
+},
+{
+  "_id": {
+    "$oid": "650db21fc69992f1eaeb7254"
+  },
+  "Title": "World History",
+  "Credits": 3,
+  "Prereq_id": "",
+  "Department": "History",
+  "Dept": [
+    {
+      "Builder": "Painter",
+      "Budget": 50000
+    }
+  ],
+  "Sub_code": "HIS-351"
+},
+{
+  "_id": {
+    "$oid": "650db265c69992f1eaeb7255"
+  },
+  "Title": "Music Video Production",
+  "Credits": 3,
+  "Prereq_id": "",
+  "Department": "Music",
+  "Dept": [
+    {
+      "Builder": "Packard",
+      "Budget": 80000
+    }
+  ],
+  "Sub_code": "MU-199"
+},
+{
+  "_id": {
+    "$oid": "650db2a4c69992f1eaeb7256"
+  },
+  "Title": "Physical Principles",
+  "Credits": 4,
+  "Prereq_id": "",
+  "Department": "Physics",
+  "Dept": [
+    {
+      "Builder": "Watson",
+      "Budget": 70000
+    }
+  ],
+  "Sub_code": "PHY-101"
+},
+{
+  "_id": {
+    "$oid": "65104c9bc99fad9a0a0fc534"
+  },
+  "Title": "Image Processing",
+  "Department": "Comp. Sci.",
+  "Credits": 3,
+  "Prereq_id": "CS-101",
+  "Dept": [
+    {
+      "Builder": "Taylor",
+      "Budget": 100000
+    }
+  ],
+  "Sub_code": "CS-319"
+}]

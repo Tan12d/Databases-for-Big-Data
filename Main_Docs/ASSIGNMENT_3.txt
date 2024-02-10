@@ -1,0 +1,137 @@
+Q1)
+a)
+db.FACULTY_INFO.find({"Teaches.Department_name":{"$in":['Physics','Music','Finance','Biology']}},{"Name":1,"Teaches.Sub_code":1,"Teaches.Title":1,"Teaches.Credits":1,"_id":0})
+
+b)
+db.FACULTY_INFO.find({"Name":{$regex:/K/},"Salary":{"$gt":65000}})
+
+c)
+db.FACULTY_INFO.updateMany({},[{"$set":{"Gross_Salary":{"$add":[{"$multiply":[{"$add":[1.05,0.2]},"$Salary"]},"$Salary"]}}}])
+
+db.FACULTY_INFO.updateMany({},[{"$set":{"Net_Salary":{"$subtract":["$Gross_Salary",{"$multiply":["$Salary",0.3]}]}}}])
+
+d)
+db.FACULTY_INFO.find({"Salary":{"$gte":60000,"$lte":80000}})
+
+e)
+db.FACULTY_INFO.find({"Name":{"$regex":/^[A-Z][r][a-z]*/}})
+
+f)
+db.FACULTY_INFO.find({"Department":"Comp. Sci."},{"Name":1,"_id":0}).sort({"Salary":-1})
+
+g)
+db.FACULTY_INFO2.updateMany({},[{"$set":{"Salary":{"$add":[{"$multiply":["$Salary",0.15]},"$Salary"]}}}])
+
+h)
+db.FACULTY_INFO3.updateMany({"Department":"Comp. Sci.","Salary":{"$lt":70000}},[{"$set":{"Salary":{"$add":[{"$multiply":["$Salary",0.03]},"$Salary"]}}}])
+
+i)
+db.FACULTY_INFO.updateMany({},[{"$set":{"Annual_Salary":{"$multiply":["$Salary",12]}}}])
+
+j)
+db.FACULTY_INFO.updateMany({"Teaches.Title":"Game Design"},[{"$set":{"Teaches.Title":"Game Theory"}}])
+
+k)
+db.Faculty_Info3.deleteMany({"Department":"History"})
+
+l)
+db.FACUTY_INFO3.updateMany({"Teaches.Sub_code":{"$regex":/^BIO/}},{"$unset":{"Teaches.$[].Sub_code":"","Teaches.$[].Title":"","Teaches.$[].Department_name":"","Teaches.$[].Credits":""}})
+
+Q2)
+a)
+db.FACULTY_INFO.aggregate([{"$match":{"Department":"Physics"}},{"$group":{"_id":1,"Avg_Salary":{"$avg":"$Salary"}}},{"$project":{"Avg_Salary":1,"_id":0,"Department":1}}])
+
+b)
+db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Avg_Salary":{"$avg":"$Salary"}}},{"$match":{"Avg_Salary":{"$ne":null}}},{"$project":{"_id":0,"Department":"$_id","Avg_Salary":1}}])
+
+c)
+db.FACULTY_INFO.find({},{"ID":1,"Name":1,"Department":1,"Salary":1}).sort({"Salary":-1}).limit(1)
+
+d)
+db.FACULTY_INFO.find({"Department":"Comp. Sci."}).count()
+
+e)
+db.FACULTY_INFO.aggregate([{"$match":{"Teaches.Department_name":"Comp. Sci."}},{"$unwind":"$Teaches"},{"$group":{"_id":"$Teaches.Department_name","Total_credits":{"$sum":"$Teaches.Credits"}}},{"$project":{"_id":0,"Teaches.Department_name":"$_id","Total_credits":1}}])
+
+f)
+db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$in":["Comp. Sci.","Physics"]}}},{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"},"No_of_Instructors":{"$count":{}}}},{"$match":{"Total_Salary":{"$ne":0}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1,"No_of_Instructors":1}}])
+
+g)
+db.FACULTY_INFO.aggregate([{"$match":{"Teaches.Department_name":{"$in":["Comp. Sci.","Biology"]}}},{"$unwind":"$Teaches"},{"$group":{"_id":"$Teaches.Department_name","Total_credits":{"$sum":"$Teaches.Credits"}}},{"$project":{"_id":0,"Teaches.Department_name":"$_id","Total_credits":1}}])
+
+h)
+db.FACULTY_INFO.aggregate([{"$unwind":"$Teaches"},{"$group":{"_id":"$Teaches.Teaches_Dept.Builder","Total_budget":{"$sum":"$Teaches.Teaches_Dept.Budget"}}},{"$match":{"Total_budget":{"$ne":0}}},{"$project":{"_id":0,"Teaches.Teaches_Dept.Builder":"$_id","Total_budget":1}}])
+
+i)
+db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":""}}},{"$group":{"_id":"$Department","No_of_Instructors":{"$count":{}}}},{"$project":{"_id":0,"Department":"$_id","No_of_Instructors":1}}])
+
+j)
+db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":""}}},{"$group":{"_id":"$Department","No_of_Instructors":{"$count":{}}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1,"No_of_Instructors":1}}]).sort({"No_of_Instructors":-1})
+
+k)
+db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Teaches.Semester","No_of_Courses":{"$count":{}}}},{"$project":{"_id":0,"Teaches.Semester":"$_id","No_of_Courses":1}}])
+
+l)
+db.FACULTY_INFO.aggregate([{"$match":{"Teaches.Semester":{"$ne":""}}},{"$unwind":"$Teaches"},{"$group":{"_id":"$Teaches.Semester","No_of_Courses":{"$count":{}}}},{"$project":{"_id":0,"Teaches.Semester":"$_id","No_of_Courses":1}}])
+
+m)
+db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":"Finance"}}},{"$group":{"_id":"$Department","Instructor_Count":{"$count":{}}}},{"$match":{"Instructor_Count":{"$gte",2}}},{"$project":{"_id":0,"Department":"$_id","Instructor_Count":1}}])
+
+
+n)
+db.FACULTY_INFO.aggregate([{"$group":{"_id":"$Department","Total_Salary":{"$sum":"$Salary"}}},{"$match":{"Total_Salary":{"$ne":0,"$gt":50000}}},{"$project":{"_id":0,"Department":"$_id","Total_Salary":1}}])
+
+o)
+db.FACULTY_INFO.aggregate([{"$match" :{"Teaches.Teaches_Dept.Builder": { "$eq": "Watson" } } }, { "$unwind": "$Teaches" }, { "$group": { "_id": "$Teaches.Teaches_Dept.Builder", "Total_budget": { "$sum": "$Teaches.Teaches_Dept.Budget" } } }, { "$project": { "_id": 0, "Teaches.Teaches_Dept.Builder": "$_id", "Total_budget": 1 } }])
+
+p)
+db.FACULTY_INFO.find({"Department":"Comp. Sci."},{"Name":1,"Salary":1,"Department":1,"_id":0}).sort({"Salary":-1}).limit(1)
+
+Q3)
+a)
+db.Dual_own.aggregate([{"$project":{"Name":{"$concat":[{"$toUpper":{"$substrCP":["$Name",0,1]}},{"$substrCP":["$Name",1,{"$subtract":[{"$strLenCP":"$Name"},1]}]}]}}},{"$project":{"_id":0}}])
+
+b)
+db.Dual_own.aggregate([{"$match":{"Name":"tanmoy"}},{"$project":{"Name":1,"_id":0,"NameSubstring":{"$substr":["$Name",1,5]}}}])
+
+c)
+db.University_Name.aggregate([{"$project":{"UniName":1,"UniLength":{"$strLenCP":"$UniName"},"_id":0}}])
+
+d)
+db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Initcap_Name":{"$concat":[{"$toUpper":{"$substrCP":["$Name",0,1]}},{"$substrCP":["$Name",1,{"$subtract":[{"$strLenCP":"$Name"},1]}]}]}}}])
+
+e)
+db.FACULTY_INFO.aggregate([{"$match":{"Department":{"$ne":""}}},{"$project":{"Department":1,"_id":0,"Abbr":{"$substr":["$Department",0,3]}}}])
+
+f)
+db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Month_of_Joining_number":{"$month":"$Date_of_Join"}}}])
+
+db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{ "$project": {"Name":1, "_id":0, "Month_of_Joining": { "$let": { vars: { "months_in_String": [, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] }, in: { "$arrayElemAt": ["$$months_in_String", {"$month":"$Date_of_Join"}] } } } } }])
+
+g)
+db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"New_Date":{"$dateToString":{"format":"%d/%m/%Y","date":"$Date_of_Join"}}}}])
+
+h)
+db.FACULTY_INFO.aggregate([{ "$match": { "Name": { "$ne": "" } } }, { "$project": { "Name": 1, "_id": 0, "Experience_in_months": { "$trunc": [{ "$divide": [{ "$subtract": [new Date(),"$Date_of_Join"] }, { "$multiply": [1000, 60, 60, 24, 30] }] }, 0] } } }])
+
+i)
+db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Experience_in_months":{"$trunc":[{"$divide":[{"$subtract":[new Date(),"$Date_of_Join"]},{"$multiply":[1000,60,60,24,30]}]},0]},"Experience_in_years":{"$trunc":[{"$di
+vide":[{"$subtract":[new Date(),"$Date_of_Join"]},{"$multiply":[1000,60,60,24,30,12]}]},0]}}}])
+
+j)
+db.FACULTY_INFO.aggregate([{"$match":{"Name":{"$ne":""}}},{"$project":{"Name":1,"_id":0,"Day_of_week":{"$let":{vars:{"days":[,"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]},in:{"$arrayElemAt":["$$days",{"$dayOfWeek":"$Date_of_Join"}]}}}}}])
+
+k)
+db.Dual_date.aggregate([{"$project":{"Date":1,"_id":0,"Future_Date":{"$add":["$Date",{"$multiply":[15,24,60,60,1000]}]}}}
+
+l)
+db.Dual_number.aggregate([{"$project":{"_id":0,"Number":1,"Truncated_Value":{"$trunc":["$Number",2]}}}])
+
+m)
+db.Dual_number.aggregate([{"$project":{"_id":0,"Num":1,"Power":{"$add":[5,{"$pow":["$Num",9]}]}}},{"$match":{"Power":{"$ne":null}}}])
+
+n)
+db.Dual_number.aggregate([{"$project":{"_id":0,"Num":1,"Sqrt":{"$sqrt":["$Num"]}}},{"$match":{"Sqrt":{"$ne":null}}}])
+
+o)
+db.Dual_lc.aggregate([{"$project":{"_id":0,"String":1,"lower_case":{"$toLower":"$String"}}}])

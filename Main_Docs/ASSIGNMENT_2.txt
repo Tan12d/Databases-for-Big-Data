@@ -1,0 +1,57 @@
+q1)
+b)
+db.TEACHER.find({})
+
+c)
+db.TEACHER.find({"Name":{"$ne":""}},{"Name":1,"Dept_name":1,"_id":0})
+
+d)
+db.TEACHER.find({"Dept_name":{"$eq":"Comp. Sci."}},{"Name":1,"Salary":1,"_id":0})
+
+e)
+db.TEACHER.find({"Dept_name":{"$eq":"Physics"},"Salary":{"$lt":90000}},{"_id":0})
+
+f)
+db.TEACHER.find({"Dept_name":{"$nin":["Comp. Sci.",""]}},{"Name":1,"Dept_name":1,"_id":0})
+
+g)
+db.TEACHER.distinct("Dept_name",{"Dept_name":{"$ne":""}})
+
+h)
+db.TEACHER.aggregate([{"$project":{"Teaches":{"$filter":{"input":"$Teaches","as":"teach","cond":{"$and":[{"$eq":["$$teach.Semester","Spring"]},{"$eq":["$$teach.Year",2009]}]}}}}},{"$match":{"Teaches":{"$ne":[]}}},{"$project":{"Teaches.Course_id":1,"_id":0}}])
+
+i)
+db.TEACHER.aggregate([{"$match":{"Teaches.Department_name":"Comp. Sci."}},{"$project":{"Teaches":{"$filter":{"input":"$Teaches","as":"teach","cond":{"$ne":["$$teach.Credits",3]}}}}},{"$match":{"Teaches":{"$ne":[]}}},{"$project":{"Teaches.Title":1,"_id":0}}])
+
+j)
+db.TEACHER.find({},{"Teaches.Course_id":1,"Teaches.Title":1,"Teaches.Department_name":1,"Teaches.Credits":1,"_id":0}).sort({"Teahes.Department_name":-1})
+
+k)
+db.TEACHER.updateMany({},{$set:{"Date_of_Join":null}})
+
+l)
+db.TEACHER.updateOne({"ID":10101},{"$set":{"Date_of_Join":new Date("1980-10-12")}})
+
+m)
+db.TEACHER.updateMany({},{"$rename":{"Dept_name":"Department"}},false,true)
+
+n)
+
+
+o)
+db.TEACHER.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Course_id","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Teaches_Dept":{"Building":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}}])
+
+p)
+
+
+q)
+db.TEACHER.renameCollection("FACULTY_INFO")
+
+r)
+
+
+s)
+db.FACULTY_INFO.updateMany({},{"$unset":{"Teaches.$[].Prereq_id": 1}},false,true)
+
+t)
+db.rough.updateMany({},[{"$set":{"Teaches":{"$map":{"input":"$Teaches","in":{"Sub_code":"$$this.Sub_code","Title":"$$this.Title","Department_name":"$$this.Department_name","Credits":"$$this.Credits","Prereq_id":"$$this.Prereq_id","Sec_id":"$$this.Sec_id","Semester":"$$this.Semester","Year":"$$this.Year","Teaches_Dept":{"Builder":"$$this.Teaches_Dept.Building","Budget":"$$this.Teaches_Dept.Budget"}}}}}}])
