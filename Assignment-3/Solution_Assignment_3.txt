@@ -1,0 +1,196 @@
+1)
+db.CUSTOMERS.insertOne({"Cust_no":"C0001","Name":"Raj Anand Singh","Phone_no":9861258466,"City":"Delhi","Account":[{"Account_no":"A0005","Type":"FD","Balance":28500,"Branch_code":"B005","Branch_name":"SaltLake Branch","Branch_city":"Kolkata"}],"Loan":{"Loan_no":"L0002","Amount":50000,"Branch_code":"B005","Branch_name":"SaltLake Branch","Branch_city":"Kolkata","Installment":[{"Inst_no":1,"Inst_Amount":10000},{"Inst_no":2,"Inst_Amount":10000},{"Inst_no":3,"Inst_Amount":10000}]}})
+
+
+  db.CUSTOMERS.insertOne({"Cust_no":"C0002","Name":"Ankita Singh","Phone_no":9879958651,"City":"Bangalore","Account":[{"Account_no":"A0005","Type":"FD","Balance":28500,"Branch_code":"B005","Branch_name":"SaltLake Branch","Branch_city":"Kolkata"}],"Loan":{"Loan_no":"L0003","Amount":8000000,"Branch_code":"B004","Branch_name":"Andheri Branch","Branch_city":"Mumbai","Installment":[{"Inst_no":1,"Inst_Amount":50000},{"Inst_no":2,"Inst_Amount":50000}]}})
+
+
+
+  db.CUSTOMERS.insertOne({"Cust_no":"C0003","Name":"Soumya Jha","Phone_no":9885623344,"City":"Mumbai","Account":[{"Account_no":"A0001","Type":"SB","Balance":20000,"Branch_code":"B003","Branch_name":"Juhu Branch","Branch_city":"Mumbai"}],"Loan":{"Loan_no":"","Amount":null,"Branch_code":"","Branch_name":"","Branch_city":"","Installment":[{"Inst_no":null,"Inst_Amount":null}]}})
+
+
+
+  db.CUSTOMERS.insertOne({"Cust_no":"C0004","Name":"Abhijit Mishra","Phone_no":9455845425,"City":"Mumbai","Account":[{"Account_no":"A0001","Type":"SB","Balance":20000,"Branch_code":"B003","Branch_name":"Juhu Branch","Branch_city":"Mumbai"},{"Account_no":"A0002","Type":"SB","Balance":15000,"Branch_code":"B002","Branch_name":"Chandnichowk Branch","Branch_city":"Delhi"}],"Loan":{"Loan_no":"","Amount":null,"Branch_code":"","Branch_name":"","Branch_city":"","Installment":[{"Inst_no":null,"Inst_Amount":null}]}})
+
+
+
+  db.CUSTOMERS.insertOne({"Cust_no":"C0005","Name":"Yash Saraf","Phone_no":9665854585,"City":"Kolkata","Account":[{"Account_no":"","Type":"","Balance":null,"Branch_code":"","Branch_name":"","Branch_city":""}],"Loan":{"Loan_no":"L0001","Amount":3000000,"Branch_code":"B006","Branch_name":"Srirampuram Branch","Branch_city":"Chennai","Installment":[{"Inst_no":null,"Inst_Amount":null}]}})
+
+
+
+  db.CUSTOMERS.insertOne({"Cust_no":"C0006","Name":"Swaroop Ray","Phone_no":9437855466,"City":"Chennai","Account":[{"Account_no":"A0003","Type":"CA","Balance":850000,"Branch_code":"B004","Branch_name":"Andheri Branch","Branch_city":"Mumbai"},{"Account_no":"A0004","Type":"CA","Balance":35000,"Branch_code":"B004","Branch_name":"Andheri Branch","Branch_city":"Mumbai"},{"Account_no":"A0010","Type":"CA","Balance":99000,"Branch_code":"B004","Branch_name":"Andheri Branch","Branch_city":"Mumbai"}],"Loan":{"Loan_no":"","Amount":null,"Branch_code":"","Branch_name":"","Branch_city":"","Installment":[{"Inst_no":null,"Inst_Amount":null}]}})
+
+
+  db.CUSTOMERS.insertOne({"Cust_no":"C0007","Name":"Surya Narayan","Phone_no":9937955215,"City":"Gurgaon","Account":[{"Account_no":"A0009","Type":"SB","Balance":18750,"Branch_code":"B003","Branch_name":"Juhu Branch","Branch_city":"Mumbai"}],"Loan":{"Loan_no":"","Amount":null,"Branch_code":"","Branch_name":"","Branch_city":"","Installment":[{"Inst_no":null,"Inst_Amount":null}]}})
+
+
+  db.CUSTOMERS.insertOne({"Cust_no":"C0008","Name":"Pranav Praveen","Phone_no":9336652441,"City":"Pune","Account":[{"Account_no":"A0008","Type":"SB","Balance":7200,"Branch_code":"B002","Branch_name":"Chandnichowk Branch","Branch_city":"Delhi"}],"Loan":{"Loan_no":"L0006","Amount":25000,"Branch_code":"B006","Branch_name":"Srirampuram Branch","Branch_city":"Chennai","Installment":[{"Inst_no":1,"Inst_Amount":3000}]}})
+
+
+  db.CUSTOMERS.insertOne({"Cust_no":"C0009","Name":"Stuti Mishra","Phone_no":7870266534,"City":"Delhi","Account":[{"Account_no":"A0007","Type":"SB","Balance":48000,"Branch_code":"B001","Branch_name":"Janakpuri Branch","Branch_city":"Delhi"}],"Loan":{"Loan_no":"L0005","Amount":9500000,"Branch_code":"B005","Branch_name":"SaltLake Branch","Branch_city":"Kolkata","Installment":[{"Inst_no":1,"Inst_Amount":500000},{"Inst_no":2,"Inst_Amount":500000}]}})
+
+
+  db.CUSTOMERS.insertOne({"Cust_no":"C0010","Name":"Aslesha Tiwari","Phone_no":null,"City":"Mumbai","Account":[{"Account_no":"A0006","Type":"FD","Balance":550000,"Branch_code":"B005","Branch_name":"SaltLake Branch","Branch_city":"Kolkata"}],"Loan":{"Loan_no":"L0004","Amount":100000,"Branch_code":"B004","Branch_name":"Andheri Branch","Branch_city":"Mumbai","Installment":[{"Inst_no":1,"Inst_Amount":20000},{"Inst_no":2,"Inst_Amount":20000}]}})
+
+
+
+2)
+a)
+db.CUSTOMERS.find({"Account.Account_no":"A0004"},{"Name":1,"Phone_no":1,"Cust_no":1,"_id":0})
+
+b)
+db.CUSTOMERS.find({"Name":"Yash Saraf"},{"Loan.Amount":1,"Loan.Branch_code":1,"_id":0})
+
+c)
+db.CUSTOMERS.find({"Loan.Loan_no":""},{"Name":1,"_id":0})
+
+d)
+db.CUSTOMERS.find({"Cust_no":"C0010"},{"Account.Account_no":1,"Account.Balance":1,"_id":0})
+
+e)
+db.CUSTOMERS.find({"Name":"Aslesha Tiwari"},{"Loan.Branch_city":1,"_id":0})
+
+f)
+db.CUSTOMERS.find({"Name":"Ankita Singh"}
+,{"Loan.Loan_no":1,"Loan":{"Installment":{"Inst_no":1,"Inst_Amount":1}},"_id":0})
+
+g)
+db.CUSTOMERS.find({"Name":"Abhijit Mishra"},{"Account.Branch_name":1,"Account.Branch_city":1,"_id":0})
+
+h)
+db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$match":{"Account.Balance":{"$lt":50000}}},{"$group":{"_id":{"Account_no":"$Account.Account_no","Type":"$Account.Type"}}},{"$project":{"_id":0,"Account_no":"$_id.Account_no","Type":"$_id.Type"}},{"$out":"ACCOUNT_TYPE"}])
+
+i)
+const accountNos = db.CUSTOMERS.findOne({ Cust_no: 'C0007' }, { 'Account.Account_no': 1, _id: 0 }).Account.map(doc => doc.Account_no);
+
+db.ACCOUNT_TYPE.updateMany({ Account_no:{$in:accountNos}},{$set:{Type:'FD'}})
+
+j)
+const n = db.CUSTOMERS.aggregate([{"$project":{"Account":{"$filter":{"input":"$Account","as":"acc","cond":{"$lt":["$$acc.Balance",20000]}}}}},{"$match":{"Account":{"$ne":[]},"Account.Account_no":{"$ne":""}}},{"$project":{"Account.Account_no":1,"_id":0}}]).toArray();
+
+let arr=[];n.forEach(function (arrayItem){var x=arrayItem.Account;x.forEach(function (p){var z=p.Account_no;arr.push(z);})});
+
+db.ACCOUNT_TYPE.deleteMany({"Account_no":{"$in":arr}})
+
+
+k)
+db.CUSTOMERS.find({"Account.Account_no":{"$ne":""},"Loan.Loan_no":{"$ne":""}},{"Name":1,"_id":0})
+
+l)
+db.CUSTOMERS.find({"Account.Account_no":{"$eq":""},"Loan.Loan_no":{"$ne":""}},{"Name":1,"_id":0})
+
+m)db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$group":{"_id":"$Name","Account_count":{"$count":{}}}},{"$match":{"Account_count":{"$gt":1}}},{"$project":{"Name":"$_id","_id":0,"Account_count":1}}])
+
+n)
+
+
+
+o)
+const x= db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$match":{"Account.Account_no":"A0001"}},{"$group":{"_id":{"Type":"$Account.Type"}}},{"$project":{"Type":"$_id.Type","_id":0}}]).toArray();
+
+const x1=[];x.forEach(function (item){x1.push(item.Type);});
+
+const y = db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$match":{"Account.Account_no":"A0001"}},{"$group":{"_id":{"Branch_code":"$Account.Branch_code"}}},{"$project":{"Branch_code":"$_id.Branch_code","_id":0}}]).toArray()
+
+const y1=[]; y.forEach(function (item){y1.push(item.Branch_code)});
+
+db.CUSTOMERS.find({"Account.Type":{"$in":x1},"Account.Branch_code":{"$in":y1},"Account.Account_no":{"$ne":"A0001"}},{"Account.Account_no":1,"Account.Type":1,"Account.Balance":1,"Account.Branch_code":1,"_id":0})
+
+p)
+db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$group":{"_id":"$Name","Account_count":{"$count":{}}}},{"$match":{"Account_count":{"$gt":1}}},{"$project":{"Name":"$_id","_id":0,"Account_count":1}}])
+
+q)
+db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$group":{"_id":"$Account.Branch_code","Average_balance":{"$avg":"$Account.Balance"}}},{"$match":{"Average_balance":{"$gt":60000}}},{"$project":{"Branch_code":"$_id","Average_balance":1,"_id":0}}])
+
+r)
+const t =  db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$match":{"Account.Type":{"$eq":"FD"}}},{"$group":{"_id":"$Account.Type","Maximum_balance":{"$max":"$Account.Balance"}}},{"$project":{"_id":0,"Maximum_balance":1}}]).toArray()
+
+var max=0;t.forEach(function (item){max=item.Maximum_balance;});
+
+db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$match":{"Account.Balance":{"$gt":max}}},{"$project":{"_id":0,"Account.Account_no":1}}])
+
+s)
+
+
+
+t)
+db.CUSTOMERS.aggregate([{"$match":{"Loan.Branch_code":{"$ne":""}}},{"$group":{"_id":{"Branch_code":"$Loan.Branch_code","Branch_name":"$Loan.Branch_name","Branch_city":"$Loan.Branch_city"}}},{"$project":{"_id":0,"Branch_code":"$_id.Branch_code","Branch_name":"$_id.Branch_name","Branch_city":"$_id.Branch_city"}}])
+
+u)
+db.CUSTOMERS.aggregate([{"$match":{"Loan.Loan_no":{"$ne":""},"Loan.Installment.Inst_no":{"$eq":null}}},{"$group":{"_id":{"Branch_code":"$Loan.Branch_code","Amount":"$Loan.Amount","Loan_no":"$Loan.Loan_no","Cust_no":"$Cust_no"}}},{"$project":{"_id":0,"Cust_no":"$_id.Cust_no","Branch_code":"$_id.Branch_code","Amount":"$_id.Amount","Loan_no":"$_id.Loan_no"}}])
+
+v)
+db.CUSTOMERS.aggregate([{"$project":{"Cust_no":1,"Account":{"$map":{"input":"$Account","as":"acc","in":{"$mergeObjects":["$$acc",{"Balance":{"$cond":{"if":{"$gt":["$$acc.Balance",80000]},"then":{"$multiply":["$$acc.Balance",1.06]},"else":{"$multiply":["$$acc.Balance",1.05]}}}}]}}}}}])
+
+
+
+
+
+
+
+3)
+a)
+db.CUSTOMERS.find({"Loan.Branch_city":"Mumbai"},{"Loan.Loan_no":1,"_id":0})
+
+b)
+db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$match":{"Account.Branch_city":"Delhi"}},{"$group":{"_id":{"Type":"$Account.Type","Branch_city":"$Account.Branch_city"}}},{"$project":{"Account.Type":"$_id.Type","_id":0}}])
+
+c)
+db.CUSTOMERS.find({"Account.Balance":{"$gt":100000}},{"Name":1,"Phone_no":1,"_id":0})
+
+d)
+db.CUSTOMERS.find({"Name":"Raj Anand Singh"}, {"_id":0,"Loan.Installment.Inst_no":1,"Loan.Installment.Inst_Amount":1})
+
+e)
+db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$match":{"Account.Type":{"$nin":["SB",""]}}},{"$group":{"_id":{"Name":"$Name","Type":"$Account.Type"}}},{"$project":{"Name":"$_id.Name","Type":"$_id.Type","_id":0}}])
+
+f)
+db.CUSTOMERS.find({"Loan.Installment.Inst_Amount":50000},{"Name":1,"_id":0})
+
+g)
+db.CUSTOMERS.find({"Account.Branch_name":{"$regex":/^SaltLake/}},{"Name":1,"Phone_no":1,"_id":0})
+
+h)
+db.CUSTOMERS.find({"Name":"Abhijit Mishra"},{"_id":0,"Account.Branch_name":1,"Account.Branch_city":1})
+
+i)
+db.CUSTOMERS.find({"Name":"Swaroop Ray"},{"_id":0,"Account.Type":1,"Account.Balance":1})
+
+j)
+db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$group":{"_id":"$Name","Account_count":{"$count":{}}}},{"$match":{"Account_count":{"$gt":1}}},{"$project":{"Name":"$_id","_id":0,"Account_count":1}}])
+
+k)
+const t =  db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$group":{"_id":"$Account.Balance","Max_balance":{"$max":"$Account.Balance"}}},{"$project":{"_id":0,"Max_balance":1}},{"$sort":{"Max_balance":-1}},{"$limit":1}]).toArray()
+
+var max1=0;t.forEach(function (item){max1=item.Max_balance;});
+
+db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$match":{"Account.Balance":max1}},{"$project":{"_id":0,"Name":1,"Account.Account_no":1,"Account.Balance":1}}])
+
+l)
+var result= db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$match":{"Account.Branch_code":{"$ne":""}}},{"$group":{"_id":"$Account.Branch_code","Total_Balance":{"$sum":"$Account.Balance"}}},{"$project":{"_id":0,"Total_Balance":1}}]).toArray()
+
+var new_totalBalance=0,count=0;result.forEach(function (item){new_totalBalance+=item.Total_Balance;count++;})
+
+var Avg_Balance=new_totalBalance/count;
+
+db.CUSTOMERS.aggregate([{"$unwind":"$Account"},{"$match":{"Account.Branch_code":{"$ne":""}}},{"$group":{"_id":"$Account.Branch_code","Total_balance":{"$sum":"$Account.Balance"}}},{"$match":{"Total_balance":{"$gt":Avg_Balance}}},{"$project":{"_id":0,"Account.Branch_code":"$_id","Total_balance":1}}])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
